@@ -17,7 +17,7 @@
 - Option to select either video will be uploaded as document or streamable
 - Added `/renewme` command to clear the downloads which are not deleted automatically.
 - Added support for YouTube Playlist .
-- Renaming of Telegram files support added. 😐
+- Renaming of Telegram files support added. 
 - Changing rclone destination config on fly (By using `/rlcone` in private mode)
 
 
@@ -249,32 +249,30 @@ client_secret =
     speedtest - Check Server Speedtest 
     help - send help 
     status - show bot stats and concurrent downloads
-    renewme - clear all downloads (admin only)⚠️
-    log - This will send you a txt file of the logs.(admin only)⚠️
-    rclone - This will change your drive config on fly.(First one will be default)--(admin only)⚠️
+    renewme - clear all downloads (admin)
+    log - This will send you a txt file of the logs. (admin only)
+    rclone - This will change your drive config on fly.(First one will be default)--(admin)
 ---
 
-</details>
+</details> 
 
 
-## Give A ⭐ Star ⭐ Before You Go Anywhere 
-
-
-## Credits Goes To 🎖🏆  . . .
+## Credits
 
 <details>
     <summary><b>Click Here For Description</b></summary>
 
-* [`MysterySD`](https://github.com/5MysterySD) Meh 🧐 For Speedtest, Direct Link Support, More in Future. 
-* [`KGK06`](https://github.com/KGK06) For Merging Different Repos 
-* [`XcodersHub`](https://github.com/XcodersHub) For The Aria2 Config & Little More
-* [`GautamKumar`](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😬
-* [`SpEcHiDe`](https://github.com/SpEcHiDe/PublicLeech) for his wonderful code😚
-* [`Rclone Team`](https://rclone.org) for theirs awesome tool☁️
+* [`MysterySD`](https://github.com/5MysterySD)
+* [`KGK06`](https://github.com/KGK06)
+* [`XcodersHub`](https://github.com/XcodersHub) 
+* [`GautamKumar`](https://github.com/gautamajay52/TorrentLeech-Gdrive) 
+* [`SpEcHiDe`](https://github.com/SpEcHiDe/PublicLeech) 
+* [`Rclone Team`](https://rclone.org) 
 * [`Dan Tès`](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [`Robots`](https://telegram.dog/Robots) for their [@UploadBot](https://telegram.dog/UploadBot)
 * [`@AjeeshNair`](https://telegram.dog/AjeeshNait) for his [torrent.ajee.sh](https://torrent.ajee.sh)
-* [`@gotstc`](https://telegram.dog/gotstc), `@aryanvikash`, [`@HasibulKabir`](https://telegram.dog/HasibulKabir) for their TORRENT groups
+* [`@gotstc`](https://telegram.dog/gotstc), `@aryanvikash`, [`@HasibulKabir`](https://telegram.dog/HasibulKabir) 
+
 
 </details>
 
