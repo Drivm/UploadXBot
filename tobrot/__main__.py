@@ -86,49 +86,42 @@ from tobrot.plugins.status_message_fn import (
 )
 
 botcmds = [
-        (f'{BotCommands.LeechCommand}','📨 [Reply] Leech any Torrent/ Magnet/ Direct Link '),
-        (f'{BotCommands.ExtractCommand}', '🔐 Unarchive items . .'),
+        (f'{BotCommands.LeechCommand}','📨 [Reply] Uploade Torrent/ Magnet/ Direct Link'),
+        (f'{BotCommands.ExtractCommand}', '🔐 Unarchive items...'),
         (f'{BotCommands.ArchiveCommand}','🗜 Archive as .tar.gz acrhive... '),
+        (f'imdb','🎬 [Title] Get IMDb Details About It !!'),
         (f'{BotCommands.ToggleDocCommand}','📂 Toggle to Document Upload '),
         (f'{BotCommands.ToggleVidCommand}','🎞 Toggle to Streamable Upload '),
         (f'{BotCommands.SaveCommand}','🖼 Save Thumbnail For Uploads'),
         (f'{BotCommands.ClearCommand}','🕹 Clear Thumbnail '),
         (f'{BotCommands.RenameCommand}','♻️ [Reply] Rename Telegram File '),
-        (f'{BotCommands.StatusCommand}','🖲 Show Bot stats and concurrent Downloads'),
-        (f'{BotCommands.SpeedCommand}','📡 Get Current Server Speed of Your Bot'),
-        (f'{BotCommands.YtdlCommand}','🧲 [Reply] YT-DL Links for Uploading...'),
-        (f'{BotCommands.PytdlCommand}','🧧 [Reply] YT-DL Playlists Links for Uploading...'),
+        (f'parser','🧮 <URL> Get Bypassed Link After Parsing !!'),
         (f'{BotCommands.MediaInfoCommand}','🆔️ [Reply] Get Telegram Files Media Info'),
         (f'setpre','🔠 <Text> Save Custom Prefix for Uploads'),
         (f'setcap','🔣 <Text> Save Custom Caption for Uploads'),
-        (f'parser','🧮 <URL> Get Bypassed Link After Parsing !!'),
-        (f'imdb','🎬 [Title] Get IMDb Details About It !!'),
         (f'set_template','📋 [HTML] Set IMDb Custom Template for Usage!!'),
+        (f'{BotCommands.YtdlCommand}','🧲 [Reply] YT-DL Links for Uploading...'),
+        (f'{BotCommands.PytdlCommand}','🧧 [Reply] YT-DL Playlists Links for Uploading...'),
         (f'{BotCommands.HelpCommand}','🆘 Get Help, How to Use and What to Do. . .'),
-        (f'{BotCommands.LogCommand}','🔀 Get the Bot Log [Owner Only]'),
         (f'{BotCommands.TsHelpCommand}','🌐 Get help for Torrent Search Module'),
+        (f'{BotCommands.StatusCommand}','🖲 Show Bot stats and concurrent Downloads'),
+        (f'{BotCommands.SpeedCommand}','📡 Get Current Server Speed of Your Bot'),
+        (f'{BotCommands.LogCommand}','🔀 Get the Bot Log [Owner Only]'),
     ]
 
 async def start(client, message):
     """/start command"""
     buttons = [
             [
-                InlineKeyboardButton('🚦 Channel 🚦', url='https://t.me/FuZionX'),
-            ],
-            [
-                InlineKeyboardButton('🛃 Torrent Group 🛃', url='https://t.me/FXTorrentz'),
+                InlineKeyboardButton('RedDeathXBot', url='https://t.me/RedDeathXBot'),
             ]
             ]
     reply_markup=InlineKeyboardMarkup(buttons)
     u_men = message.from_user.mention 
     start_string = f'''
 ┏ Hey, {u_men}
-┃
-┣<b>Lets Get Started . . .</b>
-┣<i>This bot can Leech direct / Torrent / Magnet Links !!
-┣Many More, Get It by /help Command.</i>
-┃
-┗━♦️ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL}♦️━╹
+
+This is a private bot, contact admin to get access.
 '''
     if message.chat.type == 'private':
         await message.reply_text(
@@ -138,7 +131,7 @@ async def start(client, message):
            quote=True
         )
     else:
-        await message.reply_text(f"**I Am Alive and Working, Send /help to Know How to Use Me !** ✨", parse_mode="markdown")
+        await message.reply_text(f"**I am alive and working, Send /help to Know how to use the bot!**", parse_mode="markdown")
 
 
 def restart(client, message): 
@@ -157,7 +150,7 @@ if __name__ == "__main__":
 
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-    ist = ist_now.strftime("<b>📆 𝘿𝙖𝙩𝙚 :</b> <code>%d/%m/%Y</code> \n<b>⏰ 𝙏𝙞𝙢𝙚 :</b> <code>%H:%M:%S (GMT+05:30)</code>")
+    ist = ist_now.strftime("<code>%d/%m/%Y</code> <code>%H:%M:%S (GMT+05:30)</code>")
 
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
@@ -166,7 +159,7 @@ if __name__ == "__main__":
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = f"<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !!</b>\n\n<b>📊 𝙃𝙤𝙨𝙩 :</b> <code>Heroku</code>\n{ist}"
+            text = f"<b>⭐ BOT RESTATED ⭐</b>\n\n"
             #bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTH_CHANNEL:
                 for i in AUTH_CHANNEL:
