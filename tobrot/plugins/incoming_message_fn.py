@@ -57,10 +57,9 @@ async def incoming_purge_message_f(client, message):
 async def incoming_message_f(client, message):
     """/leech command or /gleech command"""
     user_command = message.command[0]
-    u_men = message.from_user.mention
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"⚡<b>Leech Initiated</b> by {u_men}\n\n"
+    text__ = f"⚡<b><i>Leech Initiated</b></i>\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
