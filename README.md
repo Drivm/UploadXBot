@@ -1,10 +1,11 @@
 
+An Emoji-free Fork of tele-leechX, Deploy the minimal branch.
 
-# Features Supported :-
+
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>Features Supported</b></summary>
 
-## From Original Repo :
+### From Original Repo :
 - Google Drive link cloning using gclone.(wip)
 - Telegram File mirrorring to cloud along with its unzipping, unrar and untar
 - Drive/Teamdrive support/All other cloud services rclone.org supports
@@ -17,11 +18,11 @@
 - Option to select either video will be uploaded as document or streamable
 - Added `/renewme` command to clear the downloads which are not deleted automatically.
 - Added support for YouTube Playlist .
-- Renaming of Telegram files support added. 😐
+- Renaming of Telegram files support added. 
 - Changing rclone destination config on fly (By using `/rlcone` in private mode)
 
 
-## From Different Repos :
+### From Different Repos :
 - Aria2 configs In Root
 - Small FIX for Gclone
 - Added Dynamic Config 
@@ -30,7 +31,7 @@
 - Added direct rclone.conf url in vars
 
 
-## New In Repo :
+### New In Repo :
 - Dual Commands Usage (Both With / Without Bot Username)
 - Auto Commands Set To BotFather in Telegram 
 - New Torrent Search Support 
@@ -60,13 +61,10 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 </details>
 
-
-# Variable Description :-
-
-
-## Mandatory Variables :-
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>Variable Description</b></summary>
+
+### Mandatory Variables :
 
 * `TG_BOT_TOKEN`: Create a Bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API Token.
 
@@ -79,13 +77,9 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 * `OWNER_ID`: ID of the Bot Owner, He/She can be abled to access bot in bot only mode too(`Private mode`).
 
-</details>
 
 
-## Optional Configuration Variables :-
-
-<details>
-    <summary><b>Click Here For Description</b></summary>
+### Optional Configuration Variables :
 
 * `DOWNLOAD_LOCATION`
 
@@ -152,46 +146,10 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 </details>
 
 
-# RClone Guide 
-
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>Bot Commands Available</b></summary>
 
-- Set Rclone locally by following the official repo : https://rclone.org/docs/
-- Get your `rclone.conf` file.
-will look like this
-
-```
-[NAME]
-type = 
-scope =
-token =
-client_id = 
-client_secret = 
-```
-
-- Copy `rclone.conf` file in the root directory (Where `Dockerfile` exists).
-
-- Your config can contains multiple drive entries.(Default: First one and change using `/rclone` command)
-
-</details>
-
-
-# Deploying on Heroku
-- Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it or Share this Repo like Anything !!
-
-<p><a href="https://github.com/5MysterySD/Tele-LeechX/blob/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
-
-# Deploying on Okteto 
-
-[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/5MysterySD/Tele-LeechX&vars=[{"name":"API_ID","value":""},{"name":"API_HASH","value":""},{"name":"TG_BOT_TOKEN","value":""},{"name":"OWNER_ID","value":""},{"name":"AUTH_CHANNEL","value":""}])
-
-## Bot Commands Available For Repo:-
-
-<details>
-    <summary><b>Click Here For Description</b></summary>
-
-🤖Available BOT  Commands | Usage
+Available BOT  Commands | Usage
 ------------ | -------------
 |`/rclone`| This will change your drive config on fly.(First one will be def `/gclone`..This command is used to clone gdrive files or folder using gclone.-Syntax- `[ID of the file or folder][one space][name of your folder only(If the id is of file, don't put anything)]` and then reply /gclone to it.\
 |`/log`| This will send you a txt file of the logs.
@@ -220,12 +178,9 @@ client_secret =
 </details>
 
 
-### Commands Available :-
-- Set the Custom Commands in Heroku with Respective Var like leech1 or So on . .
-
 <details>
-    <summary><b>Click Here For Description</b></summary>
-
+    <summary><b>Commands Available</b></summary>
+- Set the Custom Commands in Heroku with Respective Var like leech1 or So on . .
 ---
     leech - leech any torrent/magnet/direct-download link to Telegram 
 	leechunzip - This will unarchive file and upload to telegram.
@@ -249,32 +204,67 @@ client_secret =
     speedtest - Check Server Speedtest 
     help - send help 
     status - show bot stats and concurrent downloads
-    renewme - clear all downloads (admin only)⚠️
-    log - This will send you a txt file of the logs.(admin only)⚠️
-    rclone - This will change your drive config on fly.(First one will be default)--(admin only)⚠️
+    renewme - clear all downloads (admin)
+    log - This will send you a txt file of the logs. (admin only)
+    rclone - This will change your drive config on fly.(First one will be default)--(admin)
 ---
 
-</details>
+</details> 
 
 
-## Give A ⭐ Star ⭐ Before You Go Anywhere 
 
-
-## Credits Goes To 🎖🏆  . . .
 
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>RClone Guide</b></summary>
 
-* [`MysterySD`](https://github.com/5MysterySD) Meh 🧐 For Speedtest, Direct Link Support, More in Future. 
-* [`KGK06`](https://github.com/KGK06) For Merging Different Repos 
-* [`XcodersHub`](https://github.com/XcodersHub) For The Aria2 Config & Little More
-* [`GautamKumar`](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😬
-* [`SpEcHiDe`](https://github.com/SpEcHiDe/PublicLeech) for his wonderful code😚
-* [`Rclone Team`](https://rclone.org) for theirs awesome tool☁️
-* [`Dan Tès`](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
-* [`Robots`](https://telegram.dog/Robots) for their [@UploadBot](https://telegram.dog/UploadBot)
-* [`@AjeeshNair`](https://telegram.dog/AjeeshNait) for his [torrent.ajee.sh](https://torrent.ajee.sh)
-* [`@gotstc`](https://telegram.dog/gotstc), `@aryanvikash`, [`@HasibulKabir`](https://telegram.dog/HasibulKabir) for their TORRENT groups
+- Set Rclone locally by following the official repo : https://rclone.org/docs/
+- Get your `rclone.conf` file.
+will look like this
+
+```
+[NAME]
+type = 
+scope =
+token =
+client_id = 
+client_secret = 
+```
+
+- Copy `rclone.conf` file in the root directory (Where `Dockerfile` exists).
+
+- Your config can contains multiple drive entries.(Default: First one and change using `/rclone` command)
 
 </details>
 
+
+<details>
+    <summary><b>Deployment</b></summary>
+
+### On Heroku
+- Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it!!
+
+<p><a href="https://github.com/DreamKiddie/RedDeathXBot/edit/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+
+### On Okteto 
+
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/5MysterySD/Tele-LeechX&vars=[{"name":"API_ID","value":""},{"name":"API_HASH","value":""},{"name":"TG_BOT_TOKEN","value":""},{"name":"OWNER_ID","value":""},{"name":"AUTH_CHANNEL","value":""}])
+
+</details>
+
+
+<details>
+    <summary><b>Credits</b></summary>
+
+* [`MysterySD`](https://github.com/5MysterySD)
+* [`KGK06`](https://github.com/KGK06)
+* [`XcodersHub`](https://github.com/XcodersHub) 
+* [`GautamKumar`](https://github.com/gautamajay52/TorrentLeech-Gdrive) 
+* [`SpEcHiDe`](https://github.com/SpEcHiDe/PublicLeech) 
+* [`Rclone Team`](https://rclone.org) 
+* [`Dan Tès`](https://telegram.dog/haskell) 
+* [`Robots`](https://telegram.dog/Robots) 
+* [`@AjeeshNair`](https://telegram.dog/AjeeshNait)
+* [`@gotstc`](https://telegram.dog/gotstc), `@aryanvikash`, [`@HasibulKabir`](https://telegram.dog/HasibulKabir) 
+
+
+</details>
