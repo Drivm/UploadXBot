@@ -71,7 +71,7 @@ async def template_set(client, message):
     else:
         txt = ""
     if txt == "":
-        await lm.edit_text(f"Send custom template`")
+        await lm.edit_text("Send custom template`")
         return
     else:
         template_ = txt
@@ -81,6 +81,7 @@ async def template_set(client, message):
 
 
     '''
+
     await message.reply_text(
         text="Send me new filename prefix*",
         #reply_to_message_id=message.reply_to_message.message_id,
