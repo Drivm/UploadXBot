@@ -71,13 +71,13 @@ async def template_set(client, message):
     else:
         txt = ""
     if txt == "":
-        await lm.edit_text("Send custom template`")
+        await lm.edit_text(f"Send custom template`")
         return
     else:
         template_ = txt
         IMDB_TEMPLATE[user_id_] = template_
     
-        await lm.edit_text("Custom IMDb Template saved for {u_men}:<code>{txt}</code>", parse_mode="html")
+        await lm.edit_text(f"Custom IMDb Template saved for {u_men}:<code>{txt}</code>", parse_mode="html")
 
 
     '''
