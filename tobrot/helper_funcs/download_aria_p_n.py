@@ -321,7 +321,7 @@ async def call_apropriate_function(
                     message_to_send += "\n"
                 if message_to_send != "":
                     mention_req_user = (
-                        f"**✅ Downloaded:**"
+                        f"**✅ Task completed:\n**"
                     )
                     message_to_send = mention_req_user + message_to_send
                     message_to_send += f" "
