@@ -59,7 +59,7 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"<b><i>⚡Leech Initiated⚡</i></b>\n\n"
+    text__ = f"<b><i>⚡RedDeathX Initiated⚡</i></b>\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
