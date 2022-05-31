@@ -104,12 +104,12 @@ async def template_set(client, message):
         elif ask_.text and (ask_.text.startswith("/") is True):
             await message.reply_text(
                 text="`Current process cancelled!`",
-                #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="openSettings")]])
+                #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("◀️ Back", callback_data="openSettings")]])
             )
     except TimeoutError:
         await message.send_message(
             message.reply_to_message.from_user.id,
             text="Sorry, 5 Minutes Passed! Send me Text Again to Set.",
         )
-            #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="openSettings")]])
+            #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("◀️ Back", callback_data="openSettings")]])
      '''
