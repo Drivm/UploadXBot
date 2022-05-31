@@ -25,7 +25,7 @@ def post_to_telegraph(a_title: str, content: str) -> str:
     post_page = post_client.post(
         title=a_title,
         author=auth_name,
-        author_url="https://github.com/5MysterySD/Tele-LeechX",
+        author_url="https://github.com/DreamKiddie/RedDeathXBot",
         text=content,
     )
     return post_page["url"]
@@ -42,9 +42,9 @@ def safe_filename(path_):
 async def mediainfo(client, message):
     reply = message.reply_to_message
     if not reply:
-        await message.reply_text("`Reply to Telegram Media to Generate MediaInfo !!`", parse_mode="markdown")
+        await message.reply_text("Reply to telegram media to generate mediainfo", parse_mode="markdown")
         return
-    process = await message.reply_text("`Gᴇɴᴇʀᴀᴛɪɴɢ ...`")
+    process = await message.reply_text("Processing...")
     x_media = None
     available_media = (
         "audio",
@@ -62,7 +62,7 @@ async def mediainfo(client, message):
         if x_media is not None:
             break
     if x_media is None:
-       await process.edit_text("<b>⚠️Opps⚠️ \n\n<i>⊠ Reply To a Valid Media Format to process.</i></b>")
+       await process.edit_text("Reply to a media to process.</i></b>")
        return
     media_type = str(type(x_media)).split("'")[1]
     file_path = safe_filename(await reply.download())
@@ -74,22 +74,21 @@ async def mediainfo(client, message):
 <h2>DETAILS</h2>
 <pre>{out or 'Not Supported'}</pre>
 """
-    title = "FuZionX Mediainfo"
+    title = "Mediainfo"
     text_ = media_type.split(".")[-1]
     link = post_to_telegraph(title, body_text)
     textup = f"""
-ℹ️ <code>MEDIA INFO</code> ℹ
-┃
-┃• <b>File Name :</b> <code>{x_media['file_name']}</code>
-┃• <b>Mime Type :</b> <code>{x_media['mime_type']}</code>
-┃• <b>File Size :</b> <code>{humanbytes(x_media['file_size'])}</code>
-┃• <b>Date :</b> <code>{datetime.datetime.utcfromtimestamp(x_media['date']).strftime('%I:%M:%S %p %d %B, %Y')}</code>
-┃• <b>File ID :</b> <code>{x_media['file_id']}</code>
-┃• <b>Media Type :</b> <code>{text_}</code>
-┃
-┗━♦️ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL}♦️━╹
+ℹ️ <code>MEDIA INFO</code> 
+
+<b>File Name :</b> <code>{x_media['file_name']}</code>
+<b>Mime Type :</b> <code>{x_media['mime_type']}</code>
+<b>File Size :</b> <code>{humanbytes(x_media['file_size'])}</code>
+ <b>Date :</b> <code>{datetime.datetime.utcfromtimestamp(x_media['date']).strftime('%I:%M:%S %p %d %B, %Y')}</code>
+ <b>File ID :</b> <code>{x_media['file_id']}</code>
+ <b>Media Type :</b> <code>{text_}</code>
+
 """
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="Mᴇᴅɪᴀ Iɴғᴏ", url=link)]])
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="Media Info", url=link)]])
     await process.edit_text(text=textup, reply_markup=markup)
 
 
