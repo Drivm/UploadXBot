@@ -321,7 +321,7 @@ async def call_apropriate_function(
                     message_to_send += "\n"
                 if message_to_send != "":
                     mention_req_user = (
-                        f"__**⚡Leech Completed⚡**__\n\n👤 {u_men} "
+                        f"**✅ Downloaded:**"
                     )
                     message_to_send = mention_req_user + message_to_send
                     message_to_send += f" "
@@ -354,7 +354,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                             f" Cancel Downloading . . \n\nFileName: `{file.name}` \nMay Be Due to Slow Torrent (Less Seeds to Process)."
                         )
                         await event.reply(
-                            f" Download Cancelled  :\n\n FileName: <code>{file.name}</code>\n\n #MetaDataError", quote=True
+                            f" Download Cancelled: <code>{file.name}</code>\n #MetaDataError", quote=True
                         )
                         file.remove(force=True, files=True)
                         return
@@ -368,17 +368,17 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 # await check_progress_for_dl(aria2, gid, event, previous_message)
             else:
                 LOGGER.info(
-                    f"✅ __Downloaded Successfully__ ✅: `{file.name} ({file.total_length_string()})` "
+                    f"✅Downloaded Successfully: {file.name} ({file.total_length_string()})"
                 )
                 # await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
                 if not file.is_metadata:
                     await event.edit(
-                        f"**✅ Download Completed**: `{file.name}` `({file.total_length_string()})`" 
+                        f"**✅ Downloaded**: `{file.name}` ({file.total_length_string()})" 
                     )
                 return
         except aria2p.client.ClientException:
             await event.reply(
-                f"** Download Cancelled ** :\n<code>{file.name} ({file.total_length_string()})</code>", quote=True
+                f"** Download Cancelled**: `{file.name}` ({file.total_length_string()})", quote=True
             )
             return
         except MessageNotModified as ep:
@@ -393,13 +393,13 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             LOGGER.info(str(e))
             if "not found" in str(e) or "'file'" in str(e):
                 await event.edit(
-                    f"** Download Cancelled ** :\n<code>{file.name} ({file.total_length_string()})</code>"
+                    f"** Download Cancelled**: <code>{file.name}</code> ({file.total_length_string()})"
                 )
                 return
             else:
                 LOGGER.info(str(e))
                 await event.edit(
-                    " <u>ERROR</u>  :\n<code>{}</code> \n\n#Error".format(str(e))
+                    " <u>ERROR</u>: <code>{}</code> \n".format(str(e))
                 )
                 return
 
