@@ -61,31 +61,31 @@ async def incoming_message_f(client, message):
     u_men = message.from_user.mention
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"<i>⚡️Leech Initiated⚡️</i>\n\n👤 <b>User</b> : {u_men}\n🆔 <b>User ID</b> : #ID{g_id}\n"
+    text__ = f"Leech Initiated\n\n by {u_men} #ID{g_id}\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
-            text__ += f"🧲 <b>Magnet Link</b> :  <code>{link}</code>"
+            text__ += f"<b>Magnet Link</b> :  <code>{link}</code>"
         elif link.lower().startswith("http"):
-            text__ += f"🔗 <b>Link</b> :  <a href='{link}'>Click Here</a>"
+            text__ += f"<b>Link</b> :  <a href='{link}'>Click Here</a>"
         else:
-            text__ += f"🔗 <b>Link</b> :  <code>{link}</code>"
+            text__ += f"<b>Link</b> :  <code>{link}</code>"
     elif reply_to is not None:
         if reply_to.media:
             if reply_to.document:
                 filename = [reply_to.document][0].file_name
                 if str(filename).lower().endswith(".torrent"):
-                    text__ += f"📂 <b>Media Type</b> : ☢️ <code>Torrent File</code> ☢️"
+                    text__ += f"<b>Media Type</b> : <code>Torrent File</code>"
                 else:
-                    text__ += f"📂 <b>Media Type</b> : 🗃 <code>Document</code> 🗃"
+                    text__ += f"<b>Media Type</b> : <code>Document</code>"
             elif reply_to.video:
-                text__ += f"📂 <b>Media Type</b> :  🎥 <code>Video</code> 🎥"
+                text__ += f"<b>Media Type</b> :  <code>Video</code>"
             elif reply_to.audio:
-                text__ += f"📂 <b>Media Type</b> :  🎶 <code>Audio</code> 🎶 "
+                text__ += f"<b>Media Type</b> :  <code>Audio</code>"
             else:
                 text__ += ""
         elif reply_to.text.lower().startswith("magnet:"):
-            text__ += f"🧲 <b>Magnet Link</b> :  <code>{reply_to.text}</code>"
+            text__ += f"<b>Magnet Link</b> :  <code>{reply_to.text}</code>"
         else:
             link = reply_to.text
             cusfname = ""
@@ -95,17 +95,17 @@ async def incoming_message_f(client, message):
                 cusfname = cusfnam[1]  
             LOGGER.info(cusfname)
             #if cusfname != "" and link.lower().startswith("http"):
-                #text__ += f"🔗 <b>Link</b> :  <a href='{link}'>Click Here</a>\n🗳 <b>Custom Name</b> :<code>{cusfname}</code>"
+                #text__ += f"<b>Link</b> :  <a href='{link}'>Click Here</a>\n <b>Custom Name</b> :<code>{cusfname}</code>"
             if cusfname != "":
-                text__ += f"🔗 <b>Link</b> :  <code>{link}</code>\n🗳 <b>Custom Name</b> :<code>{cusfname}</code>"
+                text__ += f"<b>Link</b> :  <code>{link}</code>\n <b>Custom Name</b> :<code>{cusfname}</code>"
             else:
                 if link.lower().startswith("http"):
-                    text__ += f"🔗 <b>Link</b> :  <a href='{link}'>Click Here</a>"
+                    text__ += f"<b>Link</b> :  <a href='{link}'>Click Here</a>"
                 else:
-                    text__ += f"🔗 <b>Link</b> :  <code>{link}</code>"
+                    text__ += f"<b>Link</b> :  <code>{link}</code>"
     else:
         link = "N/A"
-        text__ += f"🔗 <b>Link</b> : <code>{link}</code>"
+        text__ += f"<b>Link</b> : <code>{link}</code>"
         
     link_text = await message.reply_text(text=text__, parse_mode="html", quote=True, disable_web_page_preview=True)
     # get link from the incoming message & Custom Name
@@ -113,7 +113,7 @@ async def incoming_message_f(client, message):
     #logs_msg = await message.forward(LOG_CHANNEL)
     #trace_msg = await logs_msg.reply_text(f"#Leech: Download Started!")
 
-    i_m_sefg = await message.reply_text("<code>Processing ... 🔄</code>", quote=True)
+    i_m_sefg = await message.reply_text("<code>Processing ... </code>", quote=True)
     rep_mess = message.reply_to_message
     is_file = False
     dl_url = ''
@@ -130,7 +130,7 @@ async def incoming_message_f(client, message):
         else:
             if user_command == LEECH_COMMAND.lower():
                 u_men = message.from_user.mention
-                await i_m_sefg.edit(f"<i> Hey {u_men}, \n\n ⚠️ Check and Send a Valid Download Source to Start Me Up !! ⚠️</i>")
+                await i_m_sefg.edit(f"<i> Hey {u_men}, \n\n Check and send a valid download source</i>")
                 return
             is_file = True
             dl_url = rep_mess
@@ -139,7 +139,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
 
     else:
-        await i_m_sefg.edit("<b>⚠️ Opps ⚠️</b>\n\n <b><i>⊠ Reply with Direct/Torrent Link or File⁉️</i></b>")
+        await i_m_sefg.edit("<b><i>Reply with direct/torrent link or file</i></b>")
         return
     if dl_url is not None:
 
@@ -153,14 +153,12 @@ async def incoming_message_f(client, message):
             os.makedirs(new_download_location)
         aria_i_p = ''
         if not is_file:
-            await i_m_sefg.edit_text("<code>Extracting Links . . . 🔀</code>")
+            await i_m_sefg.edit_text("<code>Extracting Links . . .</code>")
             # start the aria2c daemon
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
         
-        u_men = message.from_user.mention
-        u_id = message.from_user.id 
-        await i_m_sefg.edit_text(f"┏━━━━━━━━━━━━━━━━╻\n┣👤 𝐔𝐬𝐞𝐫 : {u_men}({u_id}) \n┃\n┃ <code>⚡️ Your Request Has Been Added To The Status List ⚡️</code> \n┃\n┣ <b><u>Send</u> /{STATUS_COMMAND} <u>To Check Your Progress</u></b>\n┃\n┗━♦️ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL}♦️━╹")
+        await i_m_sefg.edit_text(f"Download started... \n\n/{STATUS_COMMAND}")
         # try to download the "link"
         is_zip = False
         is_cloud = False
@@ -199,7 +197,7 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            f"<b> 🏖Maybe You Didn't Know I am Being Used !!</b> \n\n<b>🌐 API Error</b>: {cf_name}"
+            f"<b> I am being used !!</b> \n\n<b>🌐 API Error</b>: {cf_name}"
         )
 
 
@@ -208,9 +206,9 @@ async def incoming_youtube_dl_f(client, message):
     current_user_id = message.from_user.id
     u_men = message.from_user.mention
     credit = await message.reply_text(
-        f"<b><i>🛃 Working For 🛃:</i></b> {u_men}", parse_mode="html"
+        f"<b><i>Working For</i></b> {u_men}", parse_mode="html"
     )
-    i_m_sefg = await message.reply_text("<code>Prrocessing...🔃</code>", quote=True)
+    i_m_sefg = await message.reply_text("<code>Prrocessing...</code>", quote=True)
     # LOGGER.info(message)
     # extract link from message
     if message.reply_to_message:
@@ -227,10 +225,10 @@ async def incoming_youtube_dl_f(client, message):
         yt_dl_pass_word = None
         cf_name = None
     else:
-        await i_m_sefg.edit("<b>⚠️ Opps ⚠️</b>\n\n <b><i>⊠ Reply To YTDL Supported Link.</i></b>")
+        await i_m_sefg.edit("<b><i>Reply To YTDL Supported Link.</i></b>")
         return
     if dl_url is not None:
-        await i_m_sefg.edit_text("<code>Extracting Links . . . 🔀</code>")
+        await i_m_sefg.edit_text("<code>Extracting Links . . . </code>")
         # create an unique directory
         user_working_dir = os.path.join(DOWNLOAD_LOCATION, str(current_user_id))
         # create download directory, if not exist
@@ -257,7 +255,7 @@ async def incoming_youtube_dl_f(client, message):
             await i_m_sefg.edit_text(text=text_message, reply_markup=reply_markup)
     else:
         await i_m_sefg.edit_text(
-            "<b> 🏖Maybe You Didn't Know I am Being Used !!</b> \n\n<b>🌐 API Error</b>: {cf_name}"
+            "<b>I am being used !!</b> \n\n<b>🌐 API Error</b>: {cf_name}"
         )
 
 
@@ -280,15 +278,14 @@ async def g_yt_playlist(client, message):
         await message.reply_text("<b> Reply with Youtube Playlist link</b>", quote=True)
         return
     if "youtube.com/playlist" in url:
-        u_men = message.from_user.mention
         i_m_sefg = await message.reply_text(
-            f"<b>Ok Fine 🐈 {u_men} Bro!!:\n Your Request has been ADDED</b>\n\n <code> Please wait until Upload</code>",
+            f"<b>Your Request has been added</b>\n\n Please wait until Upload...",
             parse_mode="html",
         )
         await yt_playlist_downg(message, i_m_sefg, client, is_cloud)
 
     else:
-        await message.reply_text("<b>YouTube playlist link only 🙄</b>", quote=True)
+        await message.reply_text("<b>YouTube playlist link only</b>", quote=True)
 
  #
 
@@ -329,7 +326,7 @@ __Google Drive, GDToT, AppDrive__"""
 async def rename_tg_file(client, message):
     usr_id = message.from_user.id
     if not message.reply_to_message:
-        await message.reply("<b>⚠️ Opps ⚠️</b>\n\n <b><i>⊠ Reply with Telegram Media (File / Video)⁉️</b>", quote=True)
+        await message.reply("<b><i>Reply with a telegram media?</b>", quote=True)
         return
     if len(message.command) > 1:
         new_name = (
@@ -367,12 +364,12 @@ async def rename_tg_file(client, message):
                 message_to_send += "\n"
             if message_to_send != "":
                 mention_req_user = (
-                    f"<a href='tg://user?id={usr_id}'><i>🗃 Your Uploaded Files !!</i></a>\n\n"
+                    f"<a href='tg://user?id={usr_id}'><i> Your uploaded files!!</i></a>\n\n"
                 )
                 message_to_send = mention_req_user + message_to_send
-                message_to_send = message_to_send + "\n\n" + "#Uploads\n\n<b>💥 <i>Powered By : @FuZionX</i> </b>"
+                message_to_send = message_to_send + "\n\n" + "#Uploads"
             else:
-                message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+                message_to_send = "<i>FAILED</i> to upload files."
             await message.reply_text(
                 text=message_to_send, quote=True, disable_web_page_preview=True
             )
@@ -381,5 +378,5 @@ async def rename_tg_file(client, message):
 
     else:
         await message.reply_text(
-            "<b>⚠️ Oops ⚠️</b>\n\n⚡Provide Name with extension.\n\n➩<b>Example</b>: <code> /rename Sample.mkv</code>", quote=True
+            "<b>Provide Name with extension.", quote=True
         )
