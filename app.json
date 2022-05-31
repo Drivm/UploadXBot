@@ -1,13 +1,13 @@
 {
-  "name": "Tele-LeechX",
-  "description": "A Powerful Telegram Torrent (and YouTube-DL) Leecher based on Pyrogram. Powered by @FuZionX and @FuZionXLeech",
-  "logo": "https://telegra.ph/file/8abf8d2addb8f4d982d8a.jpg",
+  "name": "RedDeathX",
+  "description": "A Powerful bot based on Pyrogram.",
+  "logo": "",
   "keywords": [
-    "telegram"
+    ""
   ],
-  "repository": "https://github.com/5MysterySD/Tele-LeechX",
-  "success_url": "https://t.me/FuZionX",
-  "website": "https://github.com/5MysterySD/Tele-LeechX",
+  "repository": "https://github.com/DreamKiddie/RedDeathXBot",
+  "success_url": "https://t.me/RedDeathXBot",
+  "website": "https://github.com/DreamKiddie/RedDeathXBot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable Webhooks when in env mode",
@@ -138,11 +138,11 @@
       "required": false
     },
     "DESTINATION_FOLDER": {
-      "description": "Enter your Cloud folder NAME(not ID😅) in which you want to upload/store your files.",
+      "description": "Enter your Cloud folder NAME(not ID) in which you want to upload/store your files.",
       "required": false
     },
     "CUSTOM_FILE_NAME": {
-      "description": "Fill with name you want to prefix the file name like ur channel username🙊, keep empty for do nothing, but add to ur config vars even without input.",
+      "description": "Fill with name you want to prefix the file name, keep empty for do nothing, but add to your config vars even without input.",
       "required": false
     },
     "CANCEL_COMMAND_G": {
