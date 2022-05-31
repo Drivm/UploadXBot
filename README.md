@@ -63,7 +63,7 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 <details>
     <summary><b>Variable Description</b></summary>
 
-### Mandatory Variables :-
+### Mandatory Variables :
 
 * `TG_BOT_TOKEN`: Create a Bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API Token.
 
@@ -78,7 +78,7 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 
 
-### Optional Configuration Variables :-
+### Optional Configuration Variables :
 
 * `DOWNLOAD_LOCATION`
 
@@ -260,9 +260,9 @@ client_secret =
 * [`GautamKumar`](https://github.com/gautamajay52/TorrentLeech-Gdrive) 
 * [`SpEcHiDe`](https://github.com/SpEcHiDe/PublicLeech) 
 * [`Rclone Team`](https://rclone.org) 
-* [`Dan Tès`](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
-* [`Robots`](https://telegram.dog/Robots) for their [@UploadBot](https://telegram.dog/UploadBot)
-* [`@AjeeshNair`](https://telegram.dog/AjeeshNait) for his [torrent.ajee.sh](https://torrent.ajee.sh)
+* [`Dan Tès`](https://telegram.dog/haskell) 
+* [`Robots`](https://telegram.dog/Robots) 
+* [`@AjeeshNair`](https://telegram.dog/AjeeshNait)
 * [`@gotstc`](https://telegram.dog/gotstc), `@aryanvikash`, [`@HasibulKabir`](https://telegram.dog/HasibulKabir) 
 
 
