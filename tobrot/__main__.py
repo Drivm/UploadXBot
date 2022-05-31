@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-    ist = ist_now.strftime("Time: <code>%d.%m.%Y</code> \n <code>%H:%M:%S (GMT+05:30)</code>")
+    ist = ist_now.strftime("Time: <code>%H:%M:%S (GMT+05:30)</code>")
 
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
@@ -159,7 +159,7 @@ if __name__ == "__main__":
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = f"<b>💠 BOT RESTARTED 💠\n\nOptimised by: {UPDATES_CHANNEL}</b>"
+            text = f"<b>🚦 BOT RESTARTED 🚦 {/b> \n\n☄️ Powered by: {UPDATES_CHANNEL}"
             #bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTH_CHANNEL:
                 for i in AUTH_CHANNEL:
