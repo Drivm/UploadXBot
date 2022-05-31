@@ -52,7 +52,7 @@ async def caption_set(client, message):
         txt = txx[0]
     except:
         pass 
-    cap_text = await lk.edit_text(f"Custom caption saved for {u_men}: </b>\n<tg-spoiler><code>{txt}</code></tg-spoiler>", parse_mode="html")
+    cap_text = await lk.edit_text(f"Custom caption saved for {u_men}: <tg-spoiler><code>{txt}</code></tg-spoiler>", parse_mode="html")
 
 
 async def template_set(client, message):
