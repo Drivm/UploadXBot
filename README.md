@@ -176,7 +176,7 @@ client_secret =
 
 </details>
 
-#Deployment
+# Deployment
 
 <details>
     <summary><b>Click Here For Description</b></summary>
@@ -190,7 +190,7 @@ client_secret =
 
 [![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/5MysterySD/Tele-LeechX&vars=[{"name":"API_ID","value":""},{"name":"API_HASH","value":""},{"name":"TG_BOT_TOKEN","value":""},{"name":"OWNER_ID","value":""},{"name":"AUTH_CHANNEL","value":""}])
 
-<details>
+</details>
 
 # Bot Commands Available For Repo:-
 
