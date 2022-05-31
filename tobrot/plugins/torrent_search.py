@@ -208,7 +208,7 @@ class TorrentSearch:
         else:
             magnet = values.get('magnet', values.get('Magnet'))  # Avoid updating source dict
             if magnet:
-                extra += f"⚡Magnet: `{self.format_magnet(magnet)}`"
+                extra += f"Magnet: `{self.format_magnet(magnet)}`"
         if (extra):
             string += "\n" + extra
         return string
@@ -278,48 +278,48 @@ class TorrentSearch:
         await self.update_message()
 
 RESULT_STR_1337 = (
-    "✘Name: `{Name}`\n"
-    "✘Size: {Size}\n"
-    "✘Seeders: {Seeders} || ✘Leechers: {Leechers}"
+    "Name: `{Name}`\n"
+    "Size: {Size}\n"
+    "Seeders: {Seeders} | Leechers: {Leechers}"
 )
 RESULT_STR_PIRATEBAY = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "Name: `{Name}`\n"
+    "Size: {Size}\n"
+    "Seeders: {Seeders} | Leechers: {Leechers}"
 )
 RESULT_STR_TGX = (
-    "⇒Name: `{Name}`\n" 
-    "⇒Size: {Size}\n"
-    "⇒Seeders: {Seeders} || ⇒Leechers: {Leechers}"
+    "Name: `{Name}`\n" 
+    "Size: {Size}\n"
+    "Seeders: {Seeders} | Leechers: {Leechers}"
 )
 RESULT_STR_YTS = (
-    "❂Name: `{Name}`\n"
-    "❂Released on: {ReleasedDate}\n"
-    "❂Genre: {Genre}\n"
-    "❂Rating: {Rating}\n"
-    "❂Likes: {Likes}\n"
-    "❂Duration: {Runtime}\n"
-    "❂Language: {Language}"
+    "Name: `{Name}`\n"
+    "Released on: {ReleasedDate}\n"
+    "Genre: {Genre}\n"
+    "Rating: {Rating}\n"
+    "Likes: {Likes}\n"
+    "Duration: {Runtime}\n"
+    "Language: {Language}"
 )
 RESULT_STR_EZTV = (
-    "★Name: `{Name}`\n"
-    "★Size: {Size}\n"
-    "★Seeders: {Seeders}"
+    "Name: `{Name}`\n"
+    "Size: {Size}\n"
+    "Seeders: {Seeders}"
 )
 RESULT_STR_TORLOCK = (
-    "✿Name: `{Name}`\n"
-    "✿Size: {Size}\n"
-    "✿Seeders: {Seeders} || ✿Leechers: {Leechers}"
+    "Name: `{Name}`\n"
+    "Size: {Size}\n"
+    "Seeders: {Seeders} | Leechers: {Leechers}"
 )
 RESULT_STR_RARBG = (
-    "⊗Name: `{Name}`\n"
-    "⊗Size: {Size}\n"
-    "⊗Seeders: {Seeders} || ⊗Leechers: {Leechers}"
+    "Name: `{Name}`\n"
+    "Size: {Size}\n"
+    "Seeders: {Seeders} | Leechers: {Leechers}"
 )
 RESULT_STR_ALL = (
-    "❖Name: `{Name}`\n"
-    "❖Size: {Size}\n"
-    "❖Seeders: {Seeders} || ❖ Leechers: {Leechers}"
+    "Name: `{Name}`\n"
+    "Size: {Size}\n"
+    "Seeders: {Seeders} | Leechers: {Leechers}"
 )
 
 TORRENT_API = 'https://api.linkstore.eu.org/api'
@@ -332,7 +332,7 @@ torrents_dict = {
     'eztv': {'source': f"{TORRENT_API}/eztv/", 'result_str': RESULT_STR_EZTV},
     'torlock': {'source': f"{TORRENT_API}/torlock/", 'result_str': RESULT_STR_TORLOCK},
     'rarbg': {'source': f"{TORRENT_API}/rarbg/", 'result_str': RESULT_STR_RARBG},
-    'ts': {'source': f"{TORRENT_API}/all/", 'result_str': RESULT_STR_ALL}
+    'torrent': {'source': f"{TORRENT_API}/all/", 'result_str': RESULT_STR_ALL}
 }
 
 torrent_handlers = []
@@ -341,24 +341,23 @@ for command, value in torrents_dict.items():
 
 async def searchhelp(self, message):
     help_string = '''
-┏━ 𝗧𝗼𝗿𝗿𝗲𝗻𝘁 𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗼𝗱𝘂𝗹𝗲 ━━╻
-┃
-┃• /nyaasi <i>[search query]</i>
-┃• /sukebei <i>[search query]</i>
-┃• /1337x <i>[search query]</i>
-┃• /piratebay <i>[search query]</i>
-┃• /tgx <i>[search query]</i>
-┃• /yts <i>[search query]</i>
-┃• /eztv <i>[search query]</i>
-┃• /torlock <i>[search query]</i>
-┃• /rarbg <i>[search query]</i>
-┃• /ts <i>[search query]</i>
-┃
-┗━♦️ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝔹𝕪 @FuZionX♦️━╹
+𝗧𝗼𝗿𝗿𝗲𝗻𝘁 𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗼𝗱𝘂𝗹𝗲
+ 
+ /nyaasi [search query] 
+ /sukebei [search query] 
+ /1337x [search query] 
+ /piratebay [search query] 
+ /tgx [search query] 
+ /yts [search query] 
+ /eztv [search query] 
+ /torlock [search query] 
+ /rarbg [search query] 
+ /torrent [search query] 
+
 '''
     await message.reply(help_string, parse_mode="HTML")
     #sendMessage(help_string, context.bot, update)
     
-    #& CustomFilters.mirror_owner_filter Not Used 😉
+    #& CustomFilters.mirror_owner_filter Not Used 
 SEARCHHELP_HANDLER = CommandHandler(BotCommands.TsHelpCommand, searchhelp, filters=(CustomFilters.authorized_chat | CustomFilters.authorized_user), run_async=True)
 dispatcher.add_handler(SEARCHHELP_HANDLER)
