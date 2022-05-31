@@ -109,7 +109,7 @@ async def incoming_message_f(client, message):
     # get link from the incoming message & Custom Name
      #TODO NEXT UPDATE
     #logs_msg = await message.forward(LOG_CHANNEL)
-    #trace_msg = await logs_msg.reply_text(f"**Download Started...***")
+    #trace_msg = await logs_msg.reply_text(f"**Download Starting...**")
 
     i_m_sefg = await message.reply_text("Processing...", quote=True)
     rep_mess = message.reply_to_message
@@ -128,7 +128,7 @@ async def incoming_message_f(client, message):
         else:
             if user_command == LEECH_COMMAND.lower():
                 u_men = message.from_user.mention
-                await i_m_sefg.edit(f"<i> Hey {u_men}, \n\n Check and send a valid download source</i>")
+                await i_m_sefg.edit(f"Check and send a valid download source")
                 return
             is_file = True
             dl_url = rep_mess
@@ -151,12 +151,12 @@ async def incoming_message_f(client, message):
             os.makedirs(new_download_location)
         aria_i_p = ''
         if not is_file:
-            await i_m_sefg.edit_text("<code>Extracting Links . . .</code>")
+            await i_m_sefg.edit_text("Extracting Links...")
             # start the aria2c daemon
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
         
-        await i_m_sefg.edit_text(f"Download started... \n\n/{STATUS_COMMAND}")
+        await i_m_sefg.edit_text(f"Download starting...")
         # try to download the "link"
         is_zip = False
         is_cloud = False
@@ -226,7 +226,7 @@ async def incoming_youtube_dl_f(client, message):
         await i_m_sefg.edit("<b><i>Reply To YTDL Supported Link.</i></b>")
         return
     if dl_url is not None:
-        await i_m_sefg.edit_text("<code>Extracting Links . . . </code>")
+        await i_m_sefg.edit_text("<code>Extracting Links...</code>")
         # create an unique directory
         user_working_dir = os.path.join(DOWNLOAD_LOCATION, str(current_user_id))
         # create download directory, if not exist
@@ -367,7 +367,7 @@ async def rename_tg_file(client, message):
                 message_to_send = mention_req_user + message_to_send
                 message_to_send = " "
             else:
-                message_to_send = "**Failed** to upload files."
+                message_to_send = "Failed to upload files."
             await message.reply_text(
                 text=message_to_send, quote=True, disable_web_page_preview=True
             )
