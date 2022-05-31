@@ -159,7 +159,7 @@ if __name__ == "__main__":
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = f"<b>💠 BOT RESTARTED 💠</B>\N\N **Optimised by**: {updates.channel}"
+            text = f"<b>💠 BOT RESTARTED 💠\n\nOptimised by: {UPDATES_CHANNEL}</b>"
             #bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTH_CHANNEL:
                 for i in AUTH_CHANNEL:
