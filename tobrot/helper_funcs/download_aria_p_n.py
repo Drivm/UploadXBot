@@ -94,7 +94,7 @@ def add_magnet(aria_instance, magnetic_link, c_file_name):
     except Exception as e:
         return (
             False,
-            "⛔ **FAILED** ⛔ \n" + str(e) + " \n<b>⌧ Your link is Dead ⚰ .</b>",
+            "⛔ **FAILED** ⛔ \n" + str(e) + " \n<b> Your link is Dead.</b>",
         )
     else:
         return True, "" + download.gid + ""
@@ -106,7 +106,7 @@ def add_torrent(aria_instance, torrent_file_path):
             False,
             "⛔ **FAILED** ⛔ \n"
             + str(e)
-            + " \n⌧ <i>Something went Wrong when trying to add <u>TORRENT</u> file to Status.</i>",
+            + " \n<i>Something went Wrong when trying to add <u>torrent</u> file to Status.</i>",
         )
     if os.path.exists(torrent_file_path):
         # Add Torrent Into Queue
@@ -124,7 +124,7 @@ def add_torrent(aria_instance, torrent_file_path):
         else:
             return True, "" + download.gid + ""
     else:
-        return False, "⛔ **FAILED** ⛔ \n⌧ Please try other sources to get workable link to Process . . ."
+        return False, " Please try other sources to get workable link to process"
 
 
 def add_url(aria_instance, text_url, c_file_name):
@@ -174,17 +174,17 @@ def add_url(aria_instance, text_url, c_file_name):
     elif "drive.google.com" in text_url:
         return (
             False,
-            "⛔ **FAILED** ⛔ \n\n⌧ <i>Please do not send Drive links to Process with this Command. Use /{CLONE_COMMAND_G} for Cloning the Link, then Use the Index Link !!</i>",
+            "Please do not send Drive links to Process with this Command. Use /{CLONE_COMMAND_G} for Cloning the Link, then Use the Index Link !!</i>",
         )
     elif "mega.nz" in text_url or "mega.co.nz" in text_url:
         return (
             False,
-            "⛔ **FAILED** ⛔ \n\n⌧ <i>Please do not send Mega links . I am yet not able to Process Those !!</i>",
+            "Please do not send Mega links.!!</i>",
         )
     elif is_gdtot_link(text_url) or is_hubdrive_link(text_url) or is_appdrive_link(text_url):
         return (
             False,
-            "⛔ **FAILED** ⛔ \n\n⌧ <i>Please Use /parser to Process the Links.</i>",
+            "Please Use /parser to Process the Links.",
         )
     else:
         uris = [text_url]
@@ -194,8 +194,7 @@ def add_url(aria_instance, text_url, c_file_name):
     except Exception as e:
         return (
             False,
-            "⛔ **FAILED** ⛔ \n" +
-            str(e) + " \n\n⌧ <i>Please do not send Slow links to Process.</i>",
+            "+ str(e) +",
         )
     else:
         return True, "" + download.gid + ""
@@ -356,10 +355,10 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 if not file.error_message:
                     if file.has_failed:
                         LOGGER.info(
-                            f"⛔ Cancel Downloading . .⛔ \n\n ⌧ <i>FileName: `{file.name}` \n⌧ May Be Due to Slow Torrent (Less Seeds to Process).</i>"
+                            f"⛔ Cancel Downloading . .⛔ \n\nFileName: `{file.name}` \nMay Be Due to Slow Torrent (Less Seeds to Process)."
                         )
                         await event.reply(
-                            f"⛔ Download Cancelled ⛔ :\n\n⌧ <i>FileName: </i><code>{file.name}</code>\n\n #MetaDataError", quote=True
+                            f"⛔ Download Cancelled ⛔ :\n\n FileName: <code>{file.name}</code>\n\n #MetaDataError", quote=True
                         )
                         file.remove(force=True, files=True)
                         return
@@ -378,7 +377,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 # await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
                 if not file.is_metadata:
                     await event.edit(
-                        f"<b>🔰Status: <i>Downloaded 📥</i></b>:\n\n📨 <b><i>File Name</i></b>: \n`{file.name}`\n\n🗃 <b><i>Total Size</i></b>: 《 `{file.total_length_string()}` 》\n\n #Downloaded" 
+                        f"**🔰Status: Downloaded**\n\n📨 <b><i>File Name</i></b>: \n`{file.name}`\n\n🗃 <b><i>Total Size</i></b>: 《 `{file.total_length_string()}` 》\n\n #Downloaded" 
                     )
                 return
         except aria2p.client.ClientException:
