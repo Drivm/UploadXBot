@@ -59,7 +59,7 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"<b><i>⚡Leech Initiated⚡</i><\b>\n\n"
+    text__ = f"<b><i>⚡Leech Initiated⚡</i></b>\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
@@ -111,7 +111,7 @@ async def incoming_message_f(client, message):
     #logs_msg = await message.forward(LOG_CHANNEL)
     #trace_msg = await logs_msg.reply_text(f"**Download Started...***")
 
-    i_m_sefg = await message.reply_text("<code>Processing ... </code>", quote=True)
+    i_m_sefg = await message.reply_text("Processing...", quote=True)
     rep_mess = message.reply_to_message
     is_file = False
     dl_url = ''
@@ -277,7 +277,7 @@ async def g_yt_playlist(client, message):
         return
     if "youtube.com/playlist" in url:
         i_m_sefg = await message.reply_text(
-            f"<b>Your Request has been added</b>\n\n Please wait until Upload...",
+            f"<b>Your Request has been added</b>\n\n Please wait until upload...",
             parse_mode="html",
         )
         await yt_playlist_downg(message, i_m_sefg, client, is_cloud)
