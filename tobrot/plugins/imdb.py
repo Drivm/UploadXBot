@@ -169,7 +169,7 @@ async def imdb_callback(bot, quer_y: CallbackQuery):
     btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡ 𝘊𝘭𝘪𝘤𝘬 𝘏𝘦𝘳𝘦 ⚡",
+                    text=f"Visit Website",
                     url=imdb['url'],
                 )
             ]
