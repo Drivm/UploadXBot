@@ -57,19 +57,18 @@ async def incoming_purge_message_f(client, message):
 async def incoming_message_f(client, message):
     """/leech command or /gleech command"""
     user_command = message.command[0]
-    g_id = message.from_user.id
     u_men = message.from_user.mention
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"Leech Initiated\n\n by {u_men} #ID{g_id}\n"
+    text__ = f"⚡<b>Leech Initiated</b> by {u_men}\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
             text__ += f"<b>Magnet Link</b> :  <code>{link}</code>"
         elif link.lower().startswith("http"):
-            text__ += f"<b>Link</b> :  <a href='{link}'>Click Here</a>"
+            text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>"
         else:
-            text__ += f"<b>Link</b> :  <code>{link}</code>"
+            text__ += f"<b>Link</b>:  <code>{link}</code>"
     elif reply_to is not None:
         if reply_to.media:
             if reply_to.document:
