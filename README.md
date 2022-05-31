@@ -235,10 +235,9 @@ client_secret =
 
 </details>
 
-# Deployment
 
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>Deployment</b></summary>
 
 ## On Heroku
 - Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it or Share this Repo like Anything !!
