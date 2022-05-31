@@ -1,21 +1,3 @@
-![FUZION LEECH](https://telegra.ph/file/213b587eee775e34ca221.jpg)
-# FuZionX Leech Bot 
-![GitHub Repo Stars](https://img.shields.io/github/stars/5MysterySD/Tele-LeechX?color=blue&style=plastic)
-![GitHub Forks](https://img.shields.io/github/forks/5MysterySD/Tele-LeechX?color=green&style=plastic)
-![GitHub Contributors](https://img.shields.io/github/contributors/5MysterySD/Tele-LeechX?style=plastic)
-![GitHub Watchers](https://img.shields.io/github/watchers/5MysterySD/Tele-LeechX?style=plastic)
-![GitHub issues](https://img.shields.io/github/issues/5MysterySD/Tele-LeechX?style=plastic)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/5MysterySD/Tele-LeechX?style=plastic)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/5MysterySD/Tele-LeechX?style=plastic)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/5MysterySD/Tele-LeechX?style=plastic)
-![GitHub repo size](https://img.shields.io/github/repo-size/5MysterySD/Tele-LeechX?color=red?style=plastic)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/5MysterySD/Tele-LeechX?style=plastic)
-[![Bot Support](https://img.shields.io/badge/Tele_LeechX-Support%20Group-blue)](https://t.me/FuZionXLeech)
-
-**A Powerful Telegram Leech Bot** Modded by `MysterySD` to directly Leech to Telegram, with Multi Direct Links Support for Enhanced Leeching.
-
-# Demo Group
-<a href="https://t.me/FuZionXLeech"><img src="https://img.shields.io/badge/FuZion Leech Bot-2cb6e0?style=for-the-badge&logo=telegram&logoColor=white"></a>
 
 
 # Features Supported :-
