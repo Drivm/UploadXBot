@@ -194,7 +194,7 @@ def add_url(aria_instance, text_url, c_file_name):
     except Exception as e:
         return (
             False,
-            "+ str(e) +",
+            " " + str(e) + " ",
         )
     else:
         return True, "" + download.gid + ""
