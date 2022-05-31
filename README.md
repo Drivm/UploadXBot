@@ -4,7 +4,7 @@
 <details>
     <summary><b>Features Supported</b></summary>
 
-## From Original Repo :
+### From Original Repo :
 - Google Drive link cloning using gclone.(wip)
 - Telegram File mirrorring to cloud along with its unzipping, unrar and untar
 - Drive/Teamdrive support/All other cloud services rclone.org supports
@@ -21,7 +21,7 @@
 - Changing rclone destination config on fly (By using `/rlcone` in private mode)
 
 
-## From Different Repos :
+### From Different Repos :
 - Aria2 configs In Root
 - Small FIX for Gclone
 - Added Dynamic Config 
@@ -30,7 +30,7 @@
 - Added direct rclone.conf url in vars
 
 
-## New In Repo :
+### New In Repo :
 - Dual Commands Usage (Both With / Without Bot Username)
 - Auto Commands Set To BotFather in Telegram 
 - New Torrent Search Support 
@@ -63,7 +63,7 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 <details>
     <summary><b>Variable Description</b></summary>
 
-## Mandatory Variables :-
+### Mandatory Variables :-
 
 * `TG_BOT_TOKEN`: Create a Bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API Token.
 
@@ -78,7 +78,7 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 
 
-## Optional Configuration Variables :-
+### Optional Configuration Variables :-
 
 * `DOWNLOAD_LOCATION`
 
@@ -239,12 +239,12 @@ client_secret =
 <details>
     <summary><b>Deployment</b></summary>
 
-## On Heroku
+### On Heroku
 - Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it or Share this Repo like Anything !!
 
 <p><a href="https://github.com/5MysterySD/Te/blob/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
-## On Okteto 
+### On Okteto 
 
 [![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/5MysterySD/Tele-LeechX&vars=[{"name":"API_ID","value":""},{"name":"API_HASH","value":""},{"name":"TG_BOT_TOKEN","value":""},{"name":"OWNER_ID","value":""},{"name":"AUTH_CHANNEL","value":""}])
 
