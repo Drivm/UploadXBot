@@ -59,7 +59,7 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"**__⚡Leech Initiated⚡__**\n\n"
+    text__ = f"<b><i>⚡Leech Initiated⚡</i><\b>\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
@@ -365,9 +365,9 @@ async def rename_tg_file(client, message):
                     f"<a href='tg://user?id={usr_id}'><i> Your uploaded files!!</i></a>\n\n"
                 )
                 message_to_send = mention_req_user + message_to_send
-                message_to_send = message_to_send + "\n\n" + " "
+                message_to_send = " "
             else:
-                message_to_send = "**FAILED** to upload files."
+                message_to_send = "**Failed** to upload files."
             await message.reply_text(
                 text=message_to_send, quote=True, disable_web_page_preview=True
             )
