@@ -59,7 +59,7 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"⚡<b><i>Leech Initiated</b></i>\n\n"
+    text__ = f"⚡**__Leech Initiated__**⚡</b></i>\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
@@ -109,7 +109,7 @@ async def incoming_message_f(client, message):
     # get link from the incoming message & Custom Name
      #TODO NEXT UPDATE
     #logs_msg = await message.forward(LOG_CHANNEL)
-    #trace_msg = await logs_msg.reply_text(f"#Leech: Download Started!")
+    #trace_msg = await logs_msg.reply_text(f"**Download Started...***")
 
     i_m_sefg = await message.reply_text("<code>Processing ... </code>", quote=True)
     rep_mess = message.reply_to_message
@@ -310,7 +310,7 @@ async def g_clonee(client, message):
         await gclone.link_gen_size()
     else:
         await message.reply_text(
-            f"""**Send GDrive Link Along with Command :**
+            f"""**Send GDrive Link along with command :**
 /{CLONE_COMMAND_G}(BotName) `Link`
 
 **Reply to a GDrive Link :**
@@ -354,7 +354,7 @@ async def rename_tg_file(client, message):
                 message_id = final_response[key_f_res_se]
                 channel_id = str(message.chat.id)[4:]
                 private_link = f"https://t.me/c/{channel_id}/{message_id}"
-                message_to_send += "⇒ <a href='"
+                message_to_send += " <a href='"
                 message_to_send += private_link
                 message_to_send += "'>"
                 message_to_send += local_file_name
@@ -365,9 +365,9 @@ async def rename_tg_file(client, message):
                     f"<a href='tg://user?id={usr_id}'><i> Your uploaded files!!</i></a>\n\n"
                 )
                 message_to_send = mention_req_user + message_to_send
-                message_to_send = message_to_send + "\n\n" + "#Uploads"
+                message_to_send = message_to_send + "\n\n" + " "
             else:
-                message_to_send = "<i>FAILED</i> to upload files."
+                message_to_send = "**FAILED** to upload files."
             await message.reply_text(
                 text=message_to_send, quote=True, disable_web_page_preview=True
             )
@@ -376,5 +376,5 @@ async def rename_tg_file(client, message):
 
     else:
         await message.reply_text(
-            "<b>Provide Name with extension.", quote=True
+            "<b>Provide name with extension.", quote=True
         )
