@@ -75,9 +75,9 @@ async def download_tg(client, message):
         await asyncio.sleep(2)
         if the_real_download_location:
             await mess_age.edit_text(
-                f"<b>✅ Downloaded Successfully</b> \n\n<b> Path Name</b>:  <code>{the_real_download_location}</code> \n<b> Time Taken</b>:  <u>{ms}</u> Seconds"
+                f"<b>✅ Task completed</b> \n\n Pathname:  <code>{the_real_download_location}</code> \n Time Taken: {ms} sec"
             )
         else:
-            await mess_age.edit_text("<b>Download Cancelled</b>\n\nPlease try again")
+            await mess_age.edit_text("<b>Download cancelled</b>\n\nPlease try again")
             return None, mess_age
     return the_real_download_location, mess_age
