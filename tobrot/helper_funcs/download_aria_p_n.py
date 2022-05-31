@@ -298,6 +298,7 @@ async def call_apropriate_function(
     #LOGGER.info(response)
     
     u_men = user_message.from_user.mention 
+    user_id = user_message.from_user.id
     if com_g:
         if is_cloud:
             await upload_to_gdrive(
@@ -324,7 +325,7 @@ async def call_apropriate_function(
                     message_to_send += "\n"
                 if message_to_send != "":
                     mention_req_user = (
-                        f"__**⚡Leech Completed⚡**__\n\n👤 {u.men} "
+                        f"__**⚡Leech Completed⚡**__\n\n👤 {u_men} "
                     )
                     message_to_send = mention_req_user + message_to_send
                     message_to_send += f" "
