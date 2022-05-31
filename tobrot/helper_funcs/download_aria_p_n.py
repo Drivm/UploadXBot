@@ -94,7 +94,7 @@ def add_magnet(aria_instance, magnetic_link, c_file_name):
     except Exception as e:
         return (
             False,
-            " **FAILED**  \n" + str(e) + " \n** Your link is Dead.**",
+            " " + str(e) + " ",
         )
     else:
         return True, "" + download.gid + ""
@@ -104,9 +104,7 @@ def add_torrent(aria_instance, torrent_file_path):
     if torrent_file_path is None:
         return (
             False,
-            " **FAILED**  \n"
-            + str(e)
-            + " \n__Something went Wrong when trying to add <u>torrent</u> file to Status.__",
+            " " + str(e) + " ",
         )
     if os.path.exists(torrent_file_path):
         # Add Torrent Into Queue
@@ -117,9 +115,7 @@ def add_torrent(aria_instance, torrent_file_path):
         except Exception as e:
             return (
                 False,
-                " **FAILED**  \n"
-                + str(e)
-                + " \n**⌧ Your Link is Slow to Process .**",
+                " " + str(e) + " ",
             )
         else:
             return True, "" + download.gid + ""
