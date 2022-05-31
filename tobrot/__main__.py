@@ -90,8 +90,8 @@ botcmds = [
         (f'{BotCommands.ExtractCommand}', '🔐 Unarchive items...'),
         (f'{BotCommands.ArchiveCommand}','🗜 Archive as .tar.gz acrhive... '),
         (f'imdb','🎬 [Title] Get IMDb Details About It !!'),
-        (f'{BotCommands.ToggleDocCommand}','📂 Toggle to Document Upload '),
-        (f'{BotCommands.ToggleVidCommand}','🎞 Toggle to Streamable Upload '),
+        (f'{BotCommands.ToggleDocCommand}','📂 Switch to document upload '),
+        (f'{BotCommands.ToggleVidCommand}','🎞 Switch to streamable upload '),
         (f'{BotCommands.SaveCommand}','🖼 Save Thumbnail For Uploads'),
         (f'{BotCommands.ClearCommand}','🕹 Clear Thumbnail '),
         (f'{BotCommands.RenameCommand}','♻️ [Reply] Rename Telegram File '),
@@ -101,12 +101,12 @@ botcmds = [
         (f'setcap','🔣 <Text> Save Custom Caption for Uploads'),
         (f'set_template','📋 [HTML] Set IMDb Custom Template for Usage!!'),
         (f'{BotCommands.YtdlCommand}','🧲 [Reply] YT-DL Links for Uploading...'),
-        (f'{BotCommands.PytdlCommand}','🧧 [Reply] YT-DL Playlists Links for Uploading...'),
+        (f'{BotCommands.PytdlCommand}',' 🗒️ [Reply] YT-DL Playlists Links for Uploading...'),
         (f'{BotCommands.HelpCommand}','🆘 Get Help, How to Use and What to Do. . .'),
-        (f'{BotCommands.TsHelpCommand}','🌐 Get help for Torrent Search Module'),
+        (f'{BotCommands.TsHelpCommand}','🌐 Torrent Search Module'),
         (f'{BotCommands.StatusCommand}','🖲 Show Bot stats and concurrent Downloads'),
         (f'{BotCommands.SpeedCommand}','📡 Get Current Server Speed of Your Bot'),
-        (f'{BotCommands.LogCommand}','🔀 Get the Bot Log [Owner Only]'),
+        (f'{BotCommands.LogCommand}','🔀 Get the Bot Log [Owner only]'),
     ]
 
 async def start(client, message):
@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-    ist = ist_now.strftime("<code>%d/%m/%Y</code> <code>%H:%M:%S (GMT+05:30)</code>")
+    ist = ist_now.strftime("Time: <code>%d.%m.%Y</code> \n <code>%H:%M:%S (GMT+05:30)</code>")
 
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
@@ -159,7 +159,7 @@ if __name__ == "__main__":
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = f"<b>⭐ BOT RESTATED ⭐</b>\n\n"
+            text = f"<b>💠 BOT RESTARTED 💠</B>\N\N **Optimised by**: {updates.channel}"
             #bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTH_CHANNEL:
                 for i in AUTH_CHANNEL:
@@ -406,7 +406,7 @@ if __name__ == "__main__":
     app.add_handler(template_handler)
     ##############################################################################
 
-    logging.info(f"@{(app.get_me()).username} Has Started Running...🏃💨💨")
+    logging.info(f"@{(app.get_me()).username} has started working...")
     
     idle()
     
