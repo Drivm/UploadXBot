@@ -152,48 +152,7 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 </details>
 
 
-# RClone Guide 
-
-<details>
-    <summary><b>Click Here For Description</b></summary>
-
-- Set Rclone locally by following the official repo : https://rclone.org/docs/
-- Get your `rclone.conf` file.
-will look like this
-
-```
-[NAME]
-type = 
-scope =
-token =
-client_id = 
-client_secret = 
-```
-
-- Copy `rclone.conf` file in the root directory (Where `Dockerfile` exists).
-
-- Your config can contains multiple drive entries.(Default: First one and change using `/rclone` command)
-
-</details>
-
-# Deployment
-
-<details>
-    <summary><b>Click Here For Description</b></summary>
-
-## On Heroku
-- Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it or Share this Repo like Anything !!
-
-<p><a href="https://github.com/5MysterySD/Te/blob/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
-
-## On Okteto 
-
-[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/5MysterySD/Tele-LeechX&vars=[{"name":"API_ID","value":""},{"name":"API_HASH","value":""},{"name":"TG_BOT_TOKEN","value":""},{"name":"OWNER_ID","value":""},{"name":"AUTH_CHANNEL","value":""}])
-
-</details>
-
-# Bot Commands Available For Repo:-
-
+### Bot Commands Available
 <details>
     <summary><b>Click Here For Description</b></summary>
 
@@ -262,6 +221,47 @@ Available BOT  Commands | Usage
 
 </details> 
 
+
+
+# RClone Guide 
+
+<details>
+    <summary><b>Click Here For Description</b></summary>
+
+- Set Rclone locally by following the official repo : https://rclone.org/docs/
+- Get your `rclone.conf` file.
+will look like this
+
+```
+[NAME]
+type = 
+scope =
+token =
+client_id = 
+client_secret = 
+```
+
+- Copy `rclone.conf` file in the root directory (Where `Dockerfile` exists).
+
+- Your config can contains multiple drive entries.(Default: First one and change using `/rclone` command)
+
+</details>
+
+# Deployment
+
+<details>
+    <summary><b>Click Here For Description</b></summary>
+
+## On Heroku
+- Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it or Share this Repo like Anything !!
+
+<p><a href="https://github.com/5MysterySD/Te/blob/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+
+## On Okteto 
+
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/5MysterySD/Tele-LeechX&vars=[{"name":"API_ID","value":""},{"name":"API_HASH","value":""},{"name":"TG_BOT_TOKEN","value":""},{"name":"OWNER_ID","value":""},{"name":"AUTH_CHANNEL","value":""}])
+
+</details>
 
 ## Credits
 
