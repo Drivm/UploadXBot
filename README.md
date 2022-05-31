@@ -60,13 +60,10 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 </details>
 
-
-# Variable Description :-
-
+<details>
+    <summary><b>Variable Description</b></summary>
 
 ## Mandatory Variables :-
-<details>
-    <summary><b>Click Here For Description</b></summary>
 
 * `TG_BOT_TOKEN`: Create a Bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API Token.
 
@@ -79,13 +76,9 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 * `OWNER_ID`: ID of the Bot Owner, He/She can be abled to access bot in bot only mode too(`Private mode`).
 
-</details>
 
 
 ## Optional Configuration Variables :-
-
-<details>
-    <summary><b>Click Here For Description</b></summary>
 
 * `DOWNLOAD_LOCATION`
 
@@ -152,9 +145,8 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 </details>
 
 
-### Bot Commands Available
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>Bot Commands Available</b></summary>
 
 Available BOT  Commands | Usage
 ------------ | -------------
@@ -185,12 +177,9 @@ Available BOT  Commands | Usage
 </details>
 
 
-### Commands Available :-
-- Set the Custom Commands in Heroku with Respective Var like leech1 or So on . .
-
 <details>
-    <summary><b>Click Here For Description</b></summary>
-
+    <summary><b>Commands Available</b></summary>
+- Set the Custom Commands in Heroku with Respective Var like leech1 or So on . .
 ---
     leech - leech any torrent/magnet/direct-download link to Telegram 
 	leechunzip - This will unarchive file and upload to telegram.
@@ -223,10 +212,9 @@ Available BOT  Commands | Usage
 
 
 
-# RClone Guide 
 
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>RClone Guide</b></summary>
 
 - Set Rclone locally by following the official repo : https://rclone.org/docs/
 - Get your `rclone.conf` file.
@@ -263,10 +251,9 @@ client_secret =
 
 </details>
 
-## Credits
 
 <details>
-    <summary><b>Click Here For Description</b></summary>
+    <summary><b>Credits</b></summary>
 
 * [`MysterySD`](https://github.com/5MysterySD)
 * [`KGK06`](https://github.com/KGK06)
