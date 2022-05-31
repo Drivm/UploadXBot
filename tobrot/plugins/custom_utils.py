@@ -26,7 +26,7 @@ async def prefix_set(client, message):
     prefix_ = txt
     PRE_DICT[user_id_] = prefix_
 
-    pre_text = await lm.edit_text(f"⚡️<i><b>Custom Prefix Set Successfully</b></i> ⚡️ \n\n👤 <b>User :</b> {u_men}\n🆔 <b>User ID :</b> <code>{user_id_}</code>\n🗃 <b>Prefix :</b> <spoiler><code>{txt}</code></spoiler>", parse_mode="html")
+    pre_text = await lm.edit_text(f"Custom filename prefix saved for {u_men}: <spoiler><code>{txt}</code></spoiler>", parse_mode="html")
     
 
 async def caption_set(client, message):
@@ -52,7 +52,7 @@ async def caption_set(client, message):
         txt = txx[0]
     except:
         pass 
-    cap_text = await lk.edit_text(f"⚡️<i><b>Custom Caption Set Successfully</b></i> ⚡️ \n\n👤 <b>User :</b> {u_men}\n🆔 <b>User ID :</b> <code>{user_id_}</code>\n🗃 <b>Caption :</b>\n<tg-spoiler><code>{txt}</code></tg-spoiler>", parse_mode="html")
+    cap_text = await lk.edit_text(f"Custom caption saved for {u_men}: </b>\n<tg-spoiler><code>{txt}</code></tg-spoiler>", parse_mode="html")
 
 
 async def template_set(client, message):
@@ -71,18 +71,18 @@ async def template_set(client, message):
     else:
         txt = ""
     if txt == "":
-        await lm.edit_text("`Send Custom TEMPLATE for your Usage`")
+        await lm.edit_text("Send custom template`")
         return
     else:
         template_ = txt
         IMDB_TEMPLATE[user_id_] = template_
     
-        await lm.edit_text(f"⚡️<i><b>Custom Template Set Successfully</b></i> ⚡️ \n\n👤 <b>User :</b> {u_men}\n🆔 <b>User ID :</b> <code>{user_id_}</code>\n🗃 <b>IMDB Template :</b> \n<code>{txt}</code>", parse_mode="html")
+        await lm.edit_text(Custom IMDb Template saved for {u_men}:</b> \n<code>{txt}</code>", parse_mode="html")
 
 
     '''
     await message.reply_text(
-        text="**Send me New File Name Prefix!**",
+        text="Send me new filename prefix*",
         #reply_to_message_id=message.reply_to_message.message_id,
         parse_mode="markdown",
     )
@@ -98,18 +98,18 @@ async def template_set(client, message):
             ascii_ = ''.join([i if (i in string.digits or i in string.ascii_letters or i == " ") else "" for i in text])
             #await db.set_prefix(user_id, prefix=text)
             await message.reply_text(
-                text=f"File Name Prefix Successfully Added!\n\n**Prefix:** `{ascii_}`",
+                text=f"Filename prefix saved:** `{ascii_}`",
             )
 
         elif ask_.text and (ask_.text.startswith("/") is True):
             await message.reply_text(
-                text="`Current Process Cancelled!`",
+                text="`Current process cancelled!`",
                 #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="openSettings")]])
             )
     except TimeoutError:
         await message.send_message(
             message.reply_to_message.from_user.id,
-            text="Sorry Unkil,\n5 Minutes Passed! I can't wait more. Send me Text Again to Set.",
+            text="Sorry, 5 Minutes Passed! Send me Text Again to Set.",
         )
             #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="openSettings")]])
      '''
