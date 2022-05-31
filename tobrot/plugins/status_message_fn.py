@@ -83,7 +83,7 @@ async def status_message_f(
             if file.status == "active":
                 is_file = file.seeder
                 if is_file is None:
-                    msgg = f"<b>Connections:</b=} <code>{file.connections}</code>"
+                    msgg = f"<b>Connections:</b> <code>{file.connections}</code>"
                 else:
                     msgg = f"<b>Seeds:</b> <code>{file.num_seeders}</code> ┃<b> Pears:</b> <code>{file.connections}</code>"
 
