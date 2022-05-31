@@ -73,17 +73,17 @@ async def incoming_message_f(client, message):
             if reply_to.document:
                 filename = [reply_to.document][0].file_name
                 if str(filename).lower().endswith(".torrent"):
-                    text__ += f"<b>Media Type</b> : <code>Torrent File</code>"
+                    text__ += f"<b>Media Type</b>: <code>Torrent File</code>"
                 else:
-                    text__ += f"<b>Media Type</b> : <code>Document</code>"
+                    text__ += f"<b>Media Type</b>: <code>Document</code>"
             elif reply_to.video:
-                text__ += f"<b>Media Type</b> :  <code>Video</code>"
+                text__ += f"<b>Media Type</b>:  <code>Video</code>"
             elif reply_to.audio:
-                text__ += f"<b>Media Type</b> :  <code>Audio</code>"
+                text__ += f"<b>Media Type</b>:  <code>Audio</code>"
             else:
                 text__ += ""
         elif reply_to.text.lower().startswith("magnet:"):
-            text__ += f"<b>Magnet Link</b> :  <code>{reply_to.text}</code>"
+            text__ += f"<b>Magnet Link</b>:  <code>{reply_to.text}</code>"
         else:
             link = reply_to.text
             cusfname = ""
@@ -93,17 +93,17 @@ async def incoming_message_f(client, message):
                 cusfname = cusfnam[1]  
             LOGGER.info(cusfname)
             #if cusfname != "" and link.lower().startswith("http"):
-                #text__ += f"<b>Link</b> :  <a href='{link}'>Click Here</a>\n <b>Custom Name</b> :<code>{cusfname}</code>"
+                #text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>\n <b>Custom Name</b> :<code>{cusfname}</code>"
             if cusfname != "":
-                text__ += f"<b>Link</b> :  <code>{link}</code>\n <b>Custom Name</b> :<code>{cusfname}</code>"
+                text__ += f"<b>Link</b>:  <code>{link}</code>\n <b>Custom Name</b> :<code>{cusfname}</code>"
             else:
                 if link.lower().startswith("http"):
-                    text__ += f"<b>Link</b> :  <a href='{link}'>Click Here</a>"
+                    text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>"
                 else:
-                    text__ += f"<b>Link</b> :  <code>{link}</code>"
+                    text__ += f"<b>Link</b>:  <code>{link}</code>"
     else:
         link = "N/A"
-        text__ += f"<b>Link</b> : <code>{link}</code>"
+        text__ += f"<b>Link</b>: <code>{link}</code>"
         
     link_text = await message.reply_text(text=text__, parse_mode="html", quote=True, disable_web_page_preview=True)
     # get link from the incoming message & Custom Name
@@ -137,7 +137,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
 
     else:
-        await i_m_sefg.edit("<b><i>Reply with direct/torrent link or file</i></b>")
+        await i_m_sefg.edit("Reply with direct/torrent link or file")
         return
     if dl_url is not None:
 
