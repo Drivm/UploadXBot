@@ -10,12 +10,12 @@ async def new_join_f(client, message):
     chat_type = message.chat.type
     if chat_type != "private":
         await message.reply_text(
-            f"""<b>🙋🏻‍♂️ Hello dear!\n\n This Is A Leech Bot .This Chat Is Not Supposed To Use Me</b>\n\n<b>Current CHAT ID: <code>{message.chat.id}</code>""",
+            f"""<b> Hey there!\n\n This is a private uploader bot. This chat is not supposed to use me</b>\n\n<b>Current CHAT ID: <code>{message.chat.id}</code>""",
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('Channel', url='https://t.me/FuZionXTorrentQuater')
+                        InlineKeyboardButton('Channel', url='https://t.me/RedDeathXBot')
                     ]
                 ]
                )
@@ -31,19 +31,14 @@ async def help_message_f(client, message):
     reply_markup = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🆘️ Open Help 🆘️", callback_data = "openHelp_pg1")
+                InlineKeyboardButton("Open Help", callback_data = "openHelp_pg1")
             ]
         ]
     )
     await message.reply_text(
-        text = f"""┏━ 🆘 <b>HELP MODULE</b> 🆘 ━━━╻
-┃
-┃• <i>Open Help to Get Tips and Help</i>
-┃• <i>Use the Bot Like a Pro User</i>
-┃• <i>Access Every Feature That Bot Offers in Better Way </i>
-┃• <i>Go through Commands to Get Help</i>
-┃
-┗━♦️ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL}♦️━╹""",
+        text = f"""𝗛𝗘𝗟𝗣 𝗠𝗢𝗗𝗨𝗟𝗘
+
+Click below to open Command Usage""",
         reply_markup = reply_markup,
         parse_mode = "html",
         disable_web_page_preview=True
