@@ -27,20 +27,20 @@ async def button(bot, update: CallbackQuery):
         chat_id, mes_id, from_usr = cmf[1], cmf[2], cmf[3]
         if (int(update.from_user.id) == int(from_usr)) or g:
             await bot.answer_callback_query(
-                update.id, text="Going to Cancel . . . 🛠", show_alert=False
+                update.id, text="Cancelling...", show_alert=False
             )
             gDict[int(chat_id)].append(int(mes_id))
         else:
             await bot.answer_callback_query(
                 callback_query_id=update.id,
-                text="⚠️ Opps ⚠️ \n I Got a False Visitor 🚸 !! \n\n 📛 Stay At Your Limits !!📛",
+                text="You're not allowed.",
                 show_alert=True,
                 cache_time=0,
             )
         return
     if "|" in cb_data:
         await bot.answer_callback_query(
-            update.id, text="Processing . . . 🛠", show_alert=False
+            update.id, text="Processing...", show_alert=False
         )
         await youtube_dl_call_back(bot, update)
         return
@@ -84,14 +84,14 @@ async def button(bot, update: CallbackQuery):
         else:
             await bot.answer_callback_query(
                 callback_query_id=update.id,
-                text="who are you? 🤪🤔🤔🤔",
+                text="You're not allowed",
                 show_alert=True,
                 cache_time=0,
             )
     elif cb_data == "fuckingdo":
         if (update.from_user.id in AUTH_CHANNEL) or g:
             await bot.answer_callback_query(
-                update.id, text="trying to delete...", show_alert=False
+                update.id, text="Deleting...", show_alert=False
             )
             g_d_list = [
                 "app.json",
@@ -130,14 +130,14 @@ async def button(bot, update: CallbackQuery):
                         os.remove(f)
                     else:
                         shutil.rmtree(f)
-                await update.message.edit_text(f"<code>🔃 Deleted {len(g_del_list)} Objects 🚮</code>")
+                await update.message.edit_text(f" Deleted {len(g_del_list)} Objects")
             else:
-                await update.message.edit_text("<i>⛔ Nothing to clear ⛔ \nAs Per I Get to Know !! </i>")
+                await update.message.edit_text("<i>Nothing to clear")
         else:
-            await update.message.edit_text("<i>I Got Info, \nYou Are Not Allowed to Do This 🤭</i>")
+            await update.message.edit_text("<i>I Got Info, \nYou're not allowed</i>")
     elif cb_data == "fuckoff":
         await bot.answer_callback_query(
-            update.id, text="Going to Cancel . . . 🔃", show_alert=False
+            update.id, text="Cancelling...", show_alert=False
         )
         await update.message.edit_text("<i>☢ Okay! ☢ \n\n ⌧ Don't Disturb Me !! </i>")
     elif cb_data == "openHelp_pg1":
@@ -156,11 +156,11 @@ async def button(bot, update: CallbackQuery):
                     InlineKeyboardButton(f"/{SAVE_THUMBNAIL}", callback_data = "savethumb")
                 ],
                 [
-                    InlineKeyboardButton("⏪••", callback_data = "pre_1"),
-                    InlineKeyboardButton("••⏩", callback_data = "nex_1")
+                    InlineKeyboardButton("◀️", callback_data = "pre_1"),
+                    InlineKeyboardButton("▶️", callback_data = "nex_1")
                 ],
                 [
-                    InlineKeyboardButton("Close 🔐", callback_data = "close")
+                    InlineKeyboardButton("Close", callback_data = "close")
                 ]
             ]
         )
@@ -185,11 +185,11 @@ async def button(bot, update: CallbackQuery):
                     InlineKeyboardButton(f"/{PYTDL_COMMAND}", callback_data = "pytdl")
                 ],
                 [
-                    InlineKeyboardButton("⏪••", callback_data = "openHelp_pg1"),
-                    InlineKeyboardButton("••⏩", callback_data = "nex_2")
+                    InlineKeyboardButton("◀️", callback_data = "openHelp_pg1"),
+                    InlineKeyboardButton("▶️", callback_data = "nex_2")
                 ],
                 [
-                    InlineKeyboardButton("Close 🔐", callback_data = "close")
+                    InlineKeyboardButton("Close", callback_data = "close")
                 ]
             ]
         )
@@ -216,11 +216,11 @@ async def button(bot, update: CallbackQuery):
                     InlineKeyboardButton(f"More Features", callback_data = "fea")
                 ],
                 [
-                    InlineKeyboardButton("⏪••", callback_data = "nex_1"),
-                    InlineKeyboardButton("••⏩", callback_data = "openHelp_pg1")
+                    InlineKeyboardButton("◀️", callback_data = "nex_1"),
+                    InlineKeyboardButton("▶️", callback_data = "openHelp_pg1")
                 ],
                 [
-                    InlineKeyboardButton("Close 🔐", callback_data = "close")
+                    InlineKeyboardButton("Close", callback_data = "close")
                 ]
             ]
         )
@@ -233,8 +233,8 @@ async def button(bot, update: CallbackQuery):
         button_call = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("↩ Back", callback_data = "openHelp_pg1"),
-                    InlineKeyboardButton("Close 🔐", callback_data = "close")
+                    InlineKeyboardButton("◀️Back", callback_data = "openHelp_pg1"),
+                    InlineKeyboardButton("Close", callback_data = "close")
                 ],
             ]
         )
@@ -279,8 +279,8 @@ async def button(bot, update: CallbackQuery):
         button_call = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("↩ Back", callback_data = ""),
-                    InlineKeyboardButton("Close 🔐", callback_data = "close")
+                    InlineKeyboardButton("◀️ Back", callback_data = ""),
+                    InlineKeyboardButton("Close", callback_data = "close")
                 ],
             ]
         )
