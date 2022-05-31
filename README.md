@@ -240,9 +240,9 @@ client_secret =
     <summary><b>Deployment</b></summary>
 
 ### On Heroku
-- Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it or Share this Repo like Anything !!
+- Deploying on Heroku Indirectly `Supported`, Please Don't Abuse it!!
 
-<p><a href="https://github.com/5MysterySD/Te/blob/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://github.com/DreamKiddie/RedDeathXBot/edit/master/heroku-deploy.md"> <img src="https://img.shields.io/badge/Deployment%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 ### On Okteto 
 
