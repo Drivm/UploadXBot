@@ -94,7 +94,7 @@ def add_magnet(aria_instance, magnetic_link, c_file_name):
     except Exception as e:
         return (
             False,
-            "⛔ **FAILED** ⛔ \n" + str(e) + " \n<b> Your link is Dead.</b>",
+            " **FAILED**  \n" + str(e) + " \n** Your link is Dead.**",
         )
     else:
         return True, "" + download.gid + ""
@@ -104,9 +104,9 @@ def add_torrent(aria_instance, torrent_file_path):
     if torrent_file_path is None:
         return (
             False,
-            "⛔ **FAILED** ⛔ \n"
+            " **FAILED**  \n"
             + str(e)
-            + " \n<i>Something went Wrong when trying to add <u>torrent</u> file to Status.</i>",
+            + " \n__Something went Wrong when trying to add <u>torrent</u> file to Status.__",
         )
     if os.path.exists(torrent_file_path):
         # Add Torrent Into Queue
@@ -117,9 +117,9 @@ def add_torrent(aria_instance, torrent_file_path):
         except Exception as e:
             return (
                 False,
-                "⛔ **FAILED** ⛔ \n"
+                " **FAILED**  \n"
                 + str(e)
-                + " \n<b>⌧ Your Link is Slow to Process .</b>",
+                + " \n**⌧ Your Link is Slow to Process .**",
             )
         else:
             return True, "" + download.gid + ""
@@ -174,12 +174,12 @@ def add_url(aria_instance, text_url, c_file_name):
     elif "drive.google.com" in text_url:
         return (
             False,
-            "Please do not send Drive links to Process with this Command. Use /{CLONE_COMMAND_G} for Cloning the Link, then Use the Index Link !!</i>",
+            "__Please do not send Drive links to Process with this Command. Use /{CLONE_COMMAND_G} for Cloning the Link, then Use the Index Link !!__",
         )
     elif "mega.nz" in text_url or "mega.co.nz" in text_url:
         return (
             False,
-            "Please do not send Mega links.!!</i>",
+            "__Please do not send Mega links.!!__",
         )
     elif is_gdtot_link(text_url) or is_hubdrive_link(text_url) or is_appdrive_link(text_url):
         return (
@@ -298,7 +298,6 @@ async def call_apropriate_function(
     #LOGGER.info(response)
     
     u_men = user_message.from_user.mention 
-    user_id = user_message.from_user.id
     if com_g:
         if is_cloud:
             await upload_to_gdrive(
@@ -317,7 +316,7 @@ async def call_apropriate_function(
                     message_id = final_response[key_f_res_se]
                     channel_id = str(sent_message_to_update_tg_p.chat.id)[4:]
                     private_link = f"https://t.me/c/{channel_id}/{message_id}"
-                    message_to_send += "┣ ⇒ <a href='"
+                    message_to_send += " <a href='"
                     message_to_send += private_link
                     message_to_send += "'>"
                     message_to_send += local_file_name
@@ -325,12 +324,12 @@ async def call_apropriate_function(
                     message_to_send += "\n"
                 if message_to_send != "":
                     mention_req_user = (
-                        f"┏ 🗃 𝙇𝙚𝙚𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚 !! 🗃\n┃\n┣ 𝐔𝐬𝐞𝐫 : {u_men} \n┣🆔️ 𝐈𝐃 : #ID{user_id}\n┃\n"
+                        f"__**⚡Leech Completed⚡**__\n\n👤 {u.men} "
                     )
                     message_to_send = mention_req_user + message_to_send
-                    message_to_send += f"┃\n┃ #FXUploads\n┃\n┗━♦️ℙ𝕠𝕨𝕖𝕣𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL}♦️"
+                    message_to_send += f" "
                 else:
-                    message_to_send = "⛔ <b>FAILED</b> ⛔\n ☎️ Can't Upload Files. "
+                    message_to_send = " **FAILED** \n ️ Can't upload files. "
                 await user_message.reply_text(
                     text=message_to_send, quote=True, disable_web_page_preview=True
                 )
@@ -355,10 +354,10 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 if not file.error_message:
                     if file.has_failed:
                         LOGGER.info(
-                            f"⛔ Cancel Downloading . .⛔ \n\nFileName: `{file.name}` \nMay Be Due to Slow Torrent (Less Seeds to Process)."
+                            f" Cancel Downloading . . \n\nFileName: `{file.name}` \nMay Be Due to Slow Torrent (Less Seeds to Process)."
                         )
                         await event.reply(
-                            f"⛔ Download Cancelled ⛔ :\n\n FileName: <code>{file.name}</code>\n\n #MetaDataError", quote=True
+                            f" Download Cancelled  :\n\n FileName: <code>{file.name}</code>\n\n #MetaDataError", quote=True
                         )
                         file.remove(force=True, files=True)
                         return
@@ -372,17 +371,17 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 # await check_progress_for_dl(aria2, gid, event, previous_message)
             else:
                 LOGGER.info(
-                    f"✅ <i>Downloaded Successfully</i> ✅: `{file.name} ({file.total_length_string()})` "
+                    f"✅ __Downloaded Successfully__ ✅: `{file.name} ({file.total_length_string()})` "
                 )
                 # await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
                 if not file.is_metadata:
                     await event.edit(
-                        f"**🔰Status: Downloaded**\n\n📨 <b><i>File Name</i></b>: \n`{file.name}`\n\n🗃 <b><i>Total Size</i></b>: 《 `{file.total_length_string()}` 》\n\n #Downloaded" 
+                        f"**✅ Download Completed**: `{file.name}` `({file.total_length_string()})`" 
                     )
                 return
         except aria2p.client.ClientException:
             await event.reply(
-                f"<i>⛔ Download Cancelled ⛔</i> :\n<code>{file.name} ({file.total_length_string()})</code>", quote=True
+                f"** Download Cancelled ** :\n<code>{file.name} ({file.total_length_string()})</code>", quote=True
             )
             return
         except MessageNotModified as ep:
@@ -397,13 +396,13 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             LOGGER.info(str(e))
             if "not found" in str(e) or "'file'" in str(e):
                 await event.edit(
-                    f"<i>⛔ Download Cancelled ⛔</i> :\n<code>{file.name} ({file.total_length_string()})</code>"
+                    f"** Download Cancelled ** :\n<code>{file.name} ({file.total_length_string()})</code>"
                 )
                 return
             else:
                 LOGGER.info(str(e))
                 await event.edit(
-                    "⛔ <u>ERROR</u> ⛔ :\n<code>{}</code> \n\n#Error".format(str(e))
+                    " <u>ERROR</u>  :\n<code>{}</code> \n\n#Error".format(str(e))
                 )
                 return
 
