@@ -1,8 +1,8 @@
 
 
 
-<details> Features Supported
-    <summary><b>Click Here For Descriptionr</b></summary>
+<details>
+    <summary><b>Features Supported</b></summary>
 
 ## From Original Repo :
 - Google Drive link cloning using gclone.(wip)
