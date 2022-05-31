@@ -127,7 +127,7 @@ HELP_COMMAND = os.environ.get("HELP_COMMAND", "help")
 SPEEDTEST = os.environ.get("SPEEDTEST", "speedtest")
 TSEARCH_COMMAND = os.environ.get("TSEARCH_COMMAND", "tshelp")
 MEDIAINFO_CMD = os.environ.get("MEDIAINFO_CMD", "mediainfo")
-UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "@FuZionX")
+UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "@RedDeathXBot")
 CAP_STYLE = os.environ.get("CAP_STYLE", "code")
 UPTOBOX_TOKEN = os.environ.get("UPTOBOX_TOKEN", "")
 EMAIL = os.environ.get("EMAIL", "mysterysd.sd@gmail.com")
@@ -143,21 +143,15 @@ DRIVEBUZZ_CRYPT = os.environ.get("DRIVEBUZZ_CRYPT", "dVAwSkpDU0FWVnNYV3hSZU40Rkh
 GADRIVE_CRYPT = os.environ.get("GADRIVE_CRYPT", "dVAwSkpDU0FWVnNYV3hSZU40RkhrRU53RzVmdjVBbFd3RThPeFllMmhSND0%3D")
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "")
 MAX_LIST_ELM = os.environ.get("MAX_LIST_ELM", None)
-DEF_IMDB_TEMPLATE = os.environ.get("IMDB_TEMPLATE", """<i><b>⚡𝐓𝐢𝐭𝐥𝐞: </b> {title}
-<b>⚡𝐈𝐌𝐃𝐁 𝐑𝐚𝐭𝐢𝐧𝐠 :</b> <code>{rating} </code>
-<b>⚡𝐐𝐮𝐚𝐥𝐢𝐭𝐲:  </b>
-<b>⚡𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐃𝐚𝐭𝐞: </b> {release_date}
-<b>⚡𝐆𝐞𝐧𝐫𝐞: </b>{genres}
-<b>⚡️𝐈𝐌𝐃𝐁: </b>{url}
-<b>⚡𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞:  </b>{languages}
-<b>⚡𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </b> {countries}
-<b>⚡𝐒𝐮𝐛𝐭𝐢𝐭𝐥𝐞𝐬: </b>
+DEF_IMDB_TEMPLATE = os.environ.get("IMDB_TEMPLATE", """**{title} ({year})**
+**⭐ {rating}** IMDb 
+⏱️ {runtime}m
 
-<b>⚡𝐒𝐭𝐨𝐫𝐲 𝐋𝐢𝐧𝐞: </b><code>{plot}</code>
+**Director:** {director} 
+**Writers:** {writer}
 
-⚡️𝐉𝐨𝐢𝐧 𝐍𝐨𝐰 :  @FuZionX </i>
-
-⚡️✅ 𝑪𝒍𝒊𝒄𝒌 𝑫𝒐𝒘𝒏 𝒂𝒏𝒅 𝑺𝒕𝒂𝒓𝒕 𝒕𝒉𝒆 𝑩𝒐𝒕 𝒕𝒐 𝑮𝒆𝒕 𝒕𝒉𝒆 𝑭𝒊𝒍𝒆 ✅ !! ⬇️ ⬇️""")
+{plot}
+""")
 LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "")
 BOT_START_TIME = time.time()
 # dict to control uploading and downloading
