@@ -113,7 +113,7 @@ async def button(bot, update: CallbackQuery):
                 "start.sh",
                 "tobrot",
                 "gautam",
-                "FuZionXLogs.txt",
+                "bot-logs.txt",
                 "vendor",
                 "LeechBot.session",
                 "LeechBot.session-journal",
