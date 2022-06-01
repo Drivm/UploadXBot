@@ -59,7 +59,7 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"<b><i>⚡RedDeathX Initiated⚡</i></b>\n\n"
+    text__ = f"<i>⚡RedDeathX Initiated⚡</i>\n\n"
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
@@ -73,7 +73,7 @@ async def incoming_message_f(client, message):
             if reply_to.document:
                 filename = [reply_to.document][0].file_name
                 if str(filename).lower().endswith(".torrent"):
-                    text__ += f"<b>Media Type</b>: <code>Torrent File</code>"
+                    text__ += f"<b>Media Type</b>: <code>.torrent file</code>"
                 else:
                     text__ += f"<b>Media Type</b>: <code>Document</code>"
             elif reply_to.video:
@@ -95,7 +95,7 @@ async def incoming_message_f(client, message):
             #if cusfname != "" and link.lower().startswith("http"):
                 #text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>\n <b>Custom Name</b> :<code>{cusfname}</code>"
             if cusfname != "":
-                text__ += f"<b>Link</b>:  <code>{link}</code>\n <b>Custom Name</b> :<code>{cusfname}</code>"
+                text__ += f"<b>Link</b>:  <code>{link}</code>\n <b>Custom Name</b>: <code>{cusfname}</code>"
             else:
                 if link.lower().startswith("http"):
                     text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>"
@@ -137,7 +137,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
 
     else:
-        await i_m_sefg.edit("Reply with direct/torrent link or file")
+        await i_m_sefg.edit("Reply with a direct/torrent link or file")
         return
     if dl_url is not None:
 
@@ -195,7 +195,7 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            f"<b> I am being used !!</b> \n\n<b>🌐 API Error</b>: {cf_name}"
+            f"<b>API Error</b>: {cf_name}"
         )
 
 
@@ -206,7 +206,7 @@ async def incoming_youtube_dl_f(client, message):
     credit = await message.reply_text(
         f"<b><i>Working For</i></b> {u_men}", parse_mode="html"
     )
-    i_m_sefg = await message.reply_text("<code>Prrocessing...</code>", quote=True)
+    i_m_sefg = await message.reply_text("Processing..."), quote=True)
     # LOGGER.info(message)
     # extract link from message
     if message.reply_to_message:
@@ -223,10 +223,10 @@ async def incoming_youtube_dl_f(client, message):
         yt_dl_pass_word = None
         cf_name = None
     else:
-        await i_m_sefg.edit("<b><i>Reply To YTDL Supported Link.</i></b>")
+        await i_m_sefg.edit("Reply to a YT-DL supported link</i></b>")
         return
     if dl_url is not None:
-        await i_m_sefg.edit_text("<code>Extracting Links...</code>")
+        await i_m_sefg.edit_tex("Extracting Links...")
         # create an unique directory
         user_working_dir = os.path.join(DOWNLOAD_LOCATION, str(current_user_id))
         # create download directory, if not exist
@@ -253,9 +253,8 @@ async def incoming_youtube_dl_f(client, message):
             await i_m_sefg.edit_text(text=text_message, reply_markup=reply_markup)
     else:
         await i_m_sefg.edit_text(
-            "<b>I am being used !!</b> \n\n<b>🌐 API Error</b>: {cf_name}"
+         f"<b>API Error</b>: {cf_name}"
         )
-
 
 # playlist
 async def g_yt_playlist(client, message):
@@ -273,7 +272,7 @@ async def g_yt_playlist(client, message):
         if user_command == GPYTDL_COMMAND.lower():
             is_cloud = True
     else:
-        await message.reply_text("<b> Reply with Youtube Playlist link</b>", quote=True)
+        await message.reply_text("Reply with Youtube playlist link", quote=True)
         return
     if "youtube.com/playlist" in url:
         i_m_sefg = await message.reply_text(
@@ -324,7 +323,7 @@ __Google Drive, GDToT, AppDrive__"""
 async def rename_tg_file(client, message):
     usr_id = message.from_user.id
     if not message.reply_to_message:
-        await message.reply("<b><i>Reply with a telegram media?</b>", quote=True)
+        await message.reply("Reply with a telegram file</b>", quote=True)
         return
     if len(message.command) > 1:
         new_name = (
