@@ -109,7 +109,7 @@ async def incoming_message_f(client, message):
     # get link from the incoming message & Custom Name
      #TODO NEXT UPDATE
     #logs_msg = await message.forward(LOG_CHANNEL)
-    #trace_msg = await logs_msg.reply_text(f"**Download Starting...**")
+    #trace_msg = await logs_msg.reply_text(f"Download Starting...")
 
     i_m_sefg = await message.reply_text("Processing...", quote=True)
     rep_mess = message.reply_to_message
@@ -206,7 +206,7 @@ async def incoming_youtube_dl_f(client, message):
     credit = await message.reply_text(
         f"<b><i>Working For</i></b> {u_men}", parse_mode="html"
     )
-    i_m_sefg = await message.reply_text("Processing..."), quote=True)
+    i_m_sefg = await message.reply_text("Processing...", quote=True)
     # LOGGER.info(message)
     # extract link from message
     if message.reply_to_message:
