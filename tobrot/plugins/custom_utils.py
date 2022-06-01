@@ -26,7 +26,7 @@ async def prefix_set(client, message):
     prefix_ = txt
     PRE_DICT[user_id_] = prefix_
 
-    pre_text = await lm.edit_text(f"Custom filename prefix saved for {u_men}: <spoiler><code>{txt}</code></spoiler>", parse_mode="html")
+    pre_text = await lm.edit_text(f"**Custom filename prefix saved:** <spoiler><code>{txt}</code></spoiler>", parse_mode="html")
     
 
 async def caption_set(client, message):
@@ -52,7 +52,7 @@ async def caption_set(client, message):
         txt = txx[0]
     except:
         pass 
-    cap_text = await lk.edit_text(f"Custom caption saved for {u_men}: <tg-spoiler><code>{txt}</code></tg-spoiler>", parse_mode="html")
+    cap_text = await lk.edit_text(f" **Custom caption saved:** <tg-spoiler><code>{txt}</code></tg-spoiler>", parse_mode="html")
 
 
 async def template_set(client, message):
@@ -77,7 +77,7 @@ async def template_set(client, message):
         template_ = txt
         IMDB_TEMPLATE[user_id_] = template_
     
-        await lm.edit_text(f"Custom IMDb Template saved for {u_men}:<code>{txt}</code>", parse_mode="html")
+        await lm.edit_text(f" **Custom IMDb Template saved:** <code>{txt}</code>", parse_mode="html")
 
 
     '''
