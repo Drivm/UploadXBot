@@ -1,3 +1,1 @@
-# RedDeathXBot
-
-Visit [minimal branch](https://github.com/Drivm/RedDeathXBot/blob/minimal)
+# Visit [minimal branch](https://github.com/Drivm/RedDeathXBot/tree/minimal)
