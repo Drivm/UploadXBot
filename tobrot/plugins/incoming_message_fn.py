@@ -59,13 +59,13 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     link_send = message.text.split(" ", maxsplit=1)
     reply_to = message.reply_to_message
-    text__ = f"<i>⚡RedDeathX Initiated⚡</i>\n\n"
+    text__ = f" "
     if len(link_send) > 1:
         link = link_send[1]
         if link.lower().startswith("magnet:"):
             text__ += f"<b>Magnet Link</b> :  <code>{link}</code>"
         elif link.lower().startswith("http"):
-            text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>"
+            text__ += f"<b>Link</b>: <code>{link}</code>"
         else:
             text__ += f"<b>Link</b>:  <code>{link}</code>"
     elif reply_to is not None:
@@ -93,12 +93,12 @@ async def incoming_message_f(client, message):
                 cusfname = cusfnam[1]  
             LOGGER.info(cusfname)
             #if cusfname != "" and link.lower().startswith("http"):
-                #text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>\n <b>Custom Name</b> :<code>{cusfname}</code>"
+                #text__ += f"<b>Link</b>:  <code>{link}</code>\n <b>Custom Name</b> :<code>{cusfname}</code>"
             if cusfname != "":
-                text__ += f"<b>Link</b>:  <code>{link}</code>\n <b>Custom Name</b>: <code>{cusfname}</code>"
+                text__ += f"<b>Link</b>:  <code>{link}</code>\n <b>Custom mame</b>: <code>{cusfname}</code>"
             else:
                 if link.lower().startswith("http"):
-                    text__ += f"<b>Link</b>:  <a href='{link}'>Click Here</a>"
+                    text__ += f"<b>Link</b>:  <code>{link}</code>"
                 else:
                     text__ += f"<b>Link</b>:  <code>{link}</code>"
     else:
@@ -151,12 +151,12 @@ async def incoming_message_f(client, message):
             os.makedirs(new_download_location)
         aria_i_p = ''
         if not is_file:
-            await i_m_sefg.edit_text("Extracting Links...")
+            await i_m_sefg.edit_text("Extracting link...")
             # start the aria2c daemon
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
         
-        await i_m_sefg.edit_text(f"Download starting...")
+        await i_m_sefg.edit_text(f"Download initiating...")
         # try to download the "link"
         is_zip = False
         is_cloud = False
