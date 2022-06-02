@@ -181,7 +181,7 @@ def add_url(aria_instance, text_url, c_file_name):
     elif is_gdtot_link(text_url) or is_hubdrive_link(text_url) or is_appdrive_link(text_url):
         return (
             False,
-            "Please Use /parser to Process the Links.",
+            "Please Use /urlparser to Process the Links.",
         )
     else:
         uris = [text_url]
