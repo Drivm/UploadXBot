@@ -207,10 +207,10 @@ async def button(bot, update: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(f"/setpre", callback_data = "setpre"),
-                    InlineKeyboardButton(f"/setcap", callback_data = "setcap")
+                    InlineKeyboardButton(f"/setcaption", callback_data = "setcaption")
                 ],
                 [
-                    InlineKeyboardButton(f"/parser", callback_data = "parser")
+                    InlineKeyboardButton(f"/urlparse", callback_data = "urlparse")
                 ],
                 [
                     InlineKeyboardButton(f"More Features", callback_data = "fea")
