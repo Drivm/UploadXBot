@@ -469,7 +469,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"Upload Initiating...\n\n <b> File</b>: <code>{}</code>".format(os.path.basename(local_file_name))",
+                            f"Upload Initiating...\n\n <b> File</b>: `{os.path.basename(local_file_name)}`",
                          start_time,
                         ),
                     )
@@ -559,7 +559,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"Upload Initiating...\n\n <b> File</b>: <code>{}</code>".format(os.path.basename(local_file_name))",
+                            f"Upload Initiating...\n\n <b> File</b>: `{os.path.basename(local_file_name)}`",
                             start_time,
                         ),
                     )
