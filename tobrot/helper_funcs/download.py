@@ -47,7 +47,7 @@ async def down_load_media_f(client, message):  # to be removed
 async def download_tg(client, message):
     user_id = message.from_user.id
     LOGGER.info(user_id)
-    mess_age = await message.reply_text("<b><i>Starting download...</i></b>", quote=True)
+    mess_age = await message.reply_text("<b><i>Download initiating...</i></b>", quote=True)
     if not os.path.isdir(DOWNLOAD_LOCATION):
         os.makedirs(DOWNLOAD_LOCATION)
     rep_mess = message.reply_to_message
@@ -75,7 +75,7 @@ async def download_tg(client, message):
         await asyncio.sleep(2)
         if the_real_download_location:
             await mess_age.edit_text(
-                f"<b>✅ Task completed</b> \n\n Pathname:  <code>{the_real_download_location}</code> \n Time Taken: {ms} sec"
+                f"<b>Completed:</b> <code>{the_real_download_location}</code>"
             )
         else:
             await mess_age.edit_text("<b>Download cancelled</b>\n\nPlease try again")
