@@ -11,7 +11,7 @@ IMDB_TEMPLATE = {}
 async def prefix_set(client, message):
     '''  /setpre command '''
     lm = await message.reply_text(
-        text="`Setting Up ...`",
+        text="Setting up...",
     )
     user_id_ = message.from_user.id 
     u_men = message.from_user.mention
@@ -33,8 +33,8 @@ async def caption_set(client, message):
     '''  /setcaption command '''
 
     lk = await message.reply_text(
-        text="`Setting Up ...`",
-    )
+        text="Setting up..",
+    
     user_id_ = message.from_user.id 
     u_men = message.from_user.mention
     cap_send = message.text.split(" ", maxsplit=1)
