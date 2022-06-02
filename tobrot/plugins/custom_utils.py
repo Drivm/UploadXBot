@@ -30,7 +30,7 @@ async def prefix_set(client, message):
     
 
 async def caption_set(client, message):
-    '''  /setcap command '''
+    '''  /setcaption command '''
 
     lk = await message.reply_text(
         text="`Setting Up ...`",
