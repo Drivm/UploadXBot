@@ -131,7 +131,7 @@ This is a private bot, contact admin to get access.
            quote=True
         )
     else:
-        await message.reply_text(f"**I am alive and working, Send /help to Know how to use the bot!**", parse_mode="markdown")
+        await message.reply_text(f"<b>Hey, I am alive and working. </b> \n\n Send /helpmodule to know how to use the bot.", parse_mode="markdown")
 
 
 def restart(client, message): 
@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-    ist = ist_now.strftime("**⏱️ Time:** <code>%H:%M:%S (GMT+05:00)</code>")
+    ist = ist_now.strftime("<b>⏱️ Time:</b> <code>%H:%M:%S (GMT+05:00)</code> \n\n Powered by <a href="http://telegram.dog/RedDeathXBot">RedDeathX</a>")
 
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
@@ -159,7 +159,7 @@ if __name__ == "__main__":
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = f"<b>🚦 BOT RESTARTED 🚦 \n\n ⚡ Powered by [RedDeathX](t.me/RedDeathXBot)</b>\n{ist}"
+            text = f"<b>🚦 BOT RESTARTED 🚦 </b> \n\n{ist}"
             #bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTH_CHANNEL:
                 for i in AUTH_CHANNEL:
@@ -386,7 +386,7 @@ if __name__ == "__main__":
     ##############################################################################
     url_parse_handler = MessageHandler(
         url_parser,
-        filters=filters.command(["parser", f"parser@{bot.username}"])
+        filters=filters.command(["urlparser", f"urlparser@{bot.username}"])
         & filters.chat(chats=AUTH_CHANNEL),
     )
     app.add_handler(url_parse_handler)
