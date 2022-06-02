@@ -54,7 +54,7 @@ async def url_parser(client, message):
             )
     else:
         oo = await op.edit_text(
-            text="**Send Link Along with Command :**\n/parser(BotName) `{link}`\n\n **Reply to a Link :**\n/parser(BotName) to Link \n\n**SUPPORTED SITES**\n__Coming Soon__",
+            text="**Send Link Along with Command :**\n/urlparser(BotName) `{link}`\n\n **Reply to a Link :**\n/urlparser(BotName) to Link \n\n**SUPPORTED SITES**\n__Coming Soon__",
         )
         return
 
