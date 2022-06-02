@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     utc_now = datetime.datetime.utcnow()
     ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-    ist = ist_now.strftime("<b>⏱️ Time:</b> <code>%H:%M:%S (GMT+05:00)</code> \n\n Powered by <a href="http://telegram.dog/RedDeathXBot">RedDeathX</a>")
+    ist = ist_now.strftime("<b>⏱️ Time:</b> <code>%H:%M:%S (GMT+05:00)</code> \n\n 💠 Powered by <a href="http://telegram.dog/RedDeathXBot">RedDeathX</a>")
 
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
