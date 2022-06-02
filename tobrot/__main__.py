@@ -86,40 +86,40 @@ from tobrot.plugins.status_message_fn import (
 )
 
 botcmds = [
-        (f'{BotCommands.LeechCommand}','📨 [Reply] Uploade Torrent/ Magnet/ Direct Link'),
-        (f'{BotCommands.ExtractCommand}', '🔐 Unarchive items...'),
-        (f'{BotCommands.ArchiveCommand}','🗜 Archive as .tar.gz acrhive... '),
         (f'imdb','🎬 [Title] Get IMDb Details About It !!'),
+        (f'{BotCommands.LeechCommand}','🗄️ [Reply] Upload torrent/ magnet/ direct link'),
+        (f'{BotCommands.ExtractCommand}', '🗜 Unarchive items...'),
+        (f'{BotCommands.ArchiveCommand}','🗜 Archive as .tar.gz acrhive... '),
         (f'{BotCommands.ToggleDocCommand}','📂 Switch to document upload '),
         (f'{BotCommands.ToggleVidCommand}','🎞 Switch to streamable upload '),
-        (f'{BotCommands.SaveCommand}','🖼 Save Thumbnail For Uploads'),
-        (f'{BotCommands.ClearCommand}','🕹 Clear Thumbnail '),
-        (f'{BotCommands.RenameCommand}','♻️ [Reply] Rename Telegram File '),
-        (f'parser','🧮 <URL> Get Bypassed Link After Parsing !!'),
-        (f'{BotCommands.MediaInfoCommand}','🆔️ [Reply] Get Telegram Files Media Info'),
-        (f'setpre','🔠 <Text> Save Custom Prefix for Uploads'),
-        (f'setcap','🔣 <Text> Save Custom Caption for Uploads'),
-        (f'set_template','📋 [HTML] Set IMDb Custom Template for Usage!!'),
-        (f'{BotCommands.YtdlCommand}','🧲 [Reply] YT-DL Links for Uploading...'),
-        (f'{BotCommands.PytdlCommand}',' 🗒️ [Reply] YT-DL Playlists Links for Uploading...'),
-        (f'{BotCommands.HelpCommand}','🆘 Get Help, How to Use and What to Do. . .'),
-        (f'{BotCommands.TsHelpCommand}','🌐 Torrent Search Module'),
-        (f'{BotCommands.StatusCommand}','🖲 Show Bot stats and concurrent Downloads'),
-        (f'{BotCommands.SpeedCommand}','📡 Get Current Server Speed of Your Bot'),
-        (f'{BotCommands.LogCommand}','🔀 Get the Bot Log [Owner only]'),
+        (f'{BotCommands.SaveCommand}','🖼 Save thumbnail for uploads'),
+        (f'{BotCommands.ClearCommand}','🗑️ Clear thumbnail image'),
+        (f'{BotCommands.RenameCommand}','🔤 [Reply] Rename telegram file '),
+        (f'urlparser','🧮 <URL> Get bypassed link after parsing '),
+        (f'{BotCommands.MediaInfoCommand}','ℹ️ [Reply] Get files media info'),
+        (f'setcaption','🔡 <Text> Save custom caption for uploads'),
+       #(f'setpre','🔠 <Text> Save Custom Prefix for Uploads'),
+       #(f'set_template','📋 [HTML] Set IMDb Custom Template for Usage!!'),
+       #(f'{BotCommands.YtdlCommand}','🧲 [Reply] YT-DL Links for Uploading...'),
+       #(f'{BotCommands.PytdlCommand}',' 🗒️ [Reply] YT-DL Playlists Links for Uploading...'),
+        (f'{BotCommands.HelpCommand}','⌨️ Bot commands help module'),
+        (f'{BotCommands.TsHelpCommand}','🌐 Torrent search module'),
+        (f'{BotCommands.StatusCommand}','📊 Show Bot stats and concurrent Downloads'),
+        (f'{BotCommands.SpeedCommand}','📡 Get current server speed of bot'),
+        (f'{BotCommands.LogCommand}','🤖 Get the bot log [Admin only]'),
     ]
 
 async def start(client, message):
     """/start command"""
     buttons = [
             [
-                InlineKeyboardButton('RedDeathXBot', url='https://t.me/RedDeathXBot'),
+                InlineKeyboardButton('Contact', url='https://t.me/RedDeathXBot'),
             ]
             ]
     reply_markup=InlineKeyboardMarkup(buttons)
     u_men = message.from_user.mention 
     start_string = f'''
-┏ Hey, {u_men}
+**Hey, {u_men}**
 
 This is a private bot, contact admin to get access.
 '''
@@ -379,7 +379,7 @@ if __name__ == "__main__":
     ##############################################################################
     captionn_handler = MessageHandler(
         caption_set,
-        filters=filters.command(["setcap", f"setcap@{bot.username}"])
+        filters=filters.command(["setcaption", f"setcaption@{bot.username}"])
         & filters.chat(chats=AUTH_CHANNEL),
     )
     app.add_handler(captionn_handler)
