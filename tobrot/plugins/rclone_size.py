@@ -37,7 +37,7 @@ async def check_size_g(client, message):
     LOGGER.info(gautam)
     await asyncio.sleep(5)
     gautam = gautam.replace("Total objects:", " **Total files** :").replace("Total size:", " **Total size** :")
-    await message.reply_text(f" __GDriveInfo__ \n\n**Folder name** : `{DESTINATION_FOLDER}`\n{gautam})
+    await message.reply_text(f" **GDrive Info** \n\n**Folder name** : `{DESTINATION_FOLDER}`\n{gautam}")
     await del_it.delete()
 
 
