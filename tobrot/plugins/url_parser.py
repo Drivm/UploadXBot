@@ -30,26 +30,26 @@ async def url_parser(client, message):
         url = None
     if url is not None:
         oo = await op.edit_text(
-            text=f"⚡️__URL Parsing Initiated__⚡️\n\n👤 **User** : {u_men} \n🆔 **User ID** : `{user_id}` \n🔗 **Link** : `{url}`\n\n`Fetching Data . . .`",
+            text=f"**URL Parsing Initiated**\n\n **Link**: `{url}`\n\nFetching Data....",
             disable_web_page_preview=True,
         )
         try:
             trigger, bypassed_url = await bypass_link(url)
         except Exception as e:
             not_ok = await op.edit_text(
-                text=f"⚡️__URL Parsing Initiated__⚡️\n\n👤 **User** : {u_men} \n🆔 **User ID** : `{user_id}` \n🔗 **Link** : `{url}`\n\n⛔ **Error** ⛔ : \n `{e}` \n\n#UnParsable ",
+                text=f"**URL Parsing Error**\n\n`{e}` ",
                 disable_web_page_preview=True,
             )
             return 
         if trigger is True:
             ok = await oo.edit_text(
-                text="⛔ __Url Parsing Stopped__ ⛔ \n\n `Check your Link First, if I can Parse it or Not !!` \n\n#UnParseable",
+                text="**Url Parsing Stopped**\n\n Check your link first, if i can parse it or not !!",
                 disable_web_page_preview=True,
             )
             return 
         else:
             tell = await oo.edit_text(
-                 text=f"⚡️__URL Parsing Initiated__⚡️\n\n👤 **User** : {u_men} \n🆔 **User ID** : `{user_id}` \n🔗 **Link** : `{url}`\n\n📇 **Bypass Info** 📇 : \n\n {bypassed_url}\n\n#Parsed",
+                 text=f"**URL Parsed**\n\n**Link** : `{url}`\n\n**Bypassed**: `{bypassed_url}`\n",
                  disable_web_page_preview=True,
             )
     else:
@@ -122,14 +122,14 @@ async def bypass_link(text_url: str):
     elif is_hubdrive_link(text_url):
         try:
             info_parsed = hubdrive(text_url)
-            url_string = f"📨 **Name** : `{info_parsed['title']}`\n📁 **File Size** : `{info_parsed['File Size']}`\n📬 **File Owner** : `{info_parsed['File Owner']}`\n📮 **Error Type** : `{info_parsed['error']}`\n☁️ **GDrive URL** : `{info_parsed['gdrive_url']}`"
+            url_string = f"**Name** : `{info_parsed['title']}`\n **File size** : `{info_parsed['File Size']}`\n**File Owner** : `{info_parsed['File Owner']}`\n**Error Type** : `{info_parsed['error']}`\n **GDrive URL** : `{info_parsed['gdrive_url']}`"
             return False, url_string
         except DirectDownloadLinkException as e:
             LOGGER.info(f'{text_url}: {e}')
     elif is_gdtot_link(text_url):
         try:
             info_parsed = gdtot(text_url)
-            url_string = f"📨 **Name** : `{info_parsed['title']}` \n📁 **File Size** : `{info_parsed['size']}` \n📆 **Date** : `{info_parsed['date']}` \n☁️ **GDrive URL** : `{info_parsed['gdrive_link']}`"
+            url_string = f"**Name** : `{info_parsed['title']}` \n**File Size** : `{info_parsed['size']}` \n**Date** : `{info_parsed['date']}` \n**GDrive URL** : `{info_parsed['gdrive_link']}`"
             return False, url_string
         except DirectDownloadLinkException as e:
             LOGGER.info(f'{text_url}: {e}')
@@ -138,12 +138,12 @@ async def bypass_link(text_url: str):
             is_direct = False
             info_parsed = appdrive_dl(text_url, is_direct)
             if info_parsed['error'] == True:
-                url_string = f"⛔ **Parsing Error** ⛔ : \n `{info_parsed['error_message']}`"
+                url_string = f"**Parsing Error**: \n `{info_parsed['error_message']}`"
             else:
-                url_string = f"📨 **Name** : `{info_parsed['name']}`\n💾 **Format** : `{info_parsed['format']}`\n📁 **File Size** : `{info_parsed['size']}`\n📎 **Link Type** : `{info_parsed['link_type']}`\n☁️ **GDrive URL** : `{info_parsed['gdrive_link']}`"
+                url_string = f"**Name** : `{info_parsed['name']}`\n**Format** : `{info_parsed['format']}`\n**File Size** : `{info_parsed['size']}`\n **Link Type** : `{info_parsed['link_type']}`\n**GDrive URL** : `{info_parsed['gdrive_link']}`"
             return False, url_string
         except Exception as e:
-            url_string = f"⛔ **Internal Error** ⛔ : \n `{e}`"
+            url_string = f" **Internal Error**: \n `{e}`"
             return False, url_string 
         except DirectDownloadLinkException as er:
             LOGGER.info(f'{text_url}: {er}')
@@ -152,12 +152,12 @@ async def bypass_link(text_url: str):
         try:
             info_parsed = url_link_generate(text_url)
             if info_parsed['error'] == True:
-                url_string = f"⛔ **Parsing Error** ⛔ : \n `{info_parsed['error_message']}`"
+                url_string = f"**Parsing Error**: \n `{info_parsed['error_message']}`"
             else:
-                url_string = f"📨 **Name** : `{info_parsed['title']}`\n📁 **File Size** : `{info_parsed['File Size']}`\n🧾 **Mime Type** : `{info_parsed['File Type']}`\n💳 **File Owner** : `{info_parsed['File Owner']}`\n☁️ **GDrive URL** : `{info_parsed['gdrive_url']}`"
+                url_string = f"**Name** : `{info_parsed['title']}`\n**File Size** : `{info_parsed['File Size']}`\n**Mime Type** : `{info_parsed['File Type']}`\n**File Owner** : `{info_parsed['File Owner']}`\n**GDrive URL** : `{info_parsed['gdrive_url']}`"
             return False, url_string
         except Exception as e:
-            url_string = f"⛔ **Internal Error** ⛔ : \n `{e}`"
+            url_string = f"**Internal Error**: \n `{e}`"
             return False, url_string 
         except DirectDownloadLinkException as er:
             LOGGER.info(f'{text_url}: {er}')
@@ -166,7 +166,7 @@ async def bypass_link(text_url: str):
         try:
             info_parsed = url_link_generate(text_url)
             men_user = 'tg://user?id={info_parsed["from"]}'
-            url_string = f"📨 **Name** : `{info_parsed['filename']}` \n📁 **File Size** : `{humanbytes(info_parsed['size'])}` \n🎞 **Duration** : `{TimeFormatter(info_parsed['duration']*1000)}` \n💾 **Resolution** : `{info_parsed['width']} × {info_parsed['height']}` \n📆 **Upload On** : `{datetime.datetime.utcfromtimestamp(info_parsed['ts']/1000).strftime('%I:%M:%S %p %d %B, %Y')}` \n💳 **File Uploader** : <a href='{men_user}'>{info_parsed['display_name']}</a> ( `{info_parsed['from']}` ) \n📎 **Download URL** : `{info_parsed['download']}`"
+            url_string = f"**Name** : `{info_parsed['filename']}` \n**File Size** : `{humanbytes(info_parsed['size'])}` \n**Duration** : `{TimeFormatter(info_parsed['duration']*1000)}` \n💾 **Resolution** : `{info_parsed['width']} × {info_parsed['height']}` \n**Uploaded On** : `{datetime.datetime.utcfromtimestamp(info_parsed['ts']/1000).strftime('%I:%M:%S %p %d %B, %Y')}` \n**File Uploader** : <a href='{men_user}'>{info_parsed['display_name']}</a> ( `{info_parsed['from']}` ) \n**Download URL** : `{info_parsed['download']}`"
             return False, url_string
         except DirectDownloadLinkException as er:
             LOGGER.info(f'{text_url}: {er}')
