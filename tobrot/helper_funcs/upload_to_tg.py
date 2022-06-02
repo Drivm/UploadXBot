@@ -469,7 +469,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"Upload Initiating...\n\n <b> File</b>: <code>{}</code>".format(os.path.basename(local_file_name))}`",
+                            f"Upload Initiating...\n\n <b> File</b>: <code>{}</code>".format(os.path.basename(local_file_name))",
                          start_time,
                         ),
                     )
@@ -559,7 +559,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"Upload Initiating...\n\n <b> File</b>: <code>{}</code>".format(os.path.basename(local_file_name))}`",
+                            f"Upload Initiating...\n\n <b> File</b>: <code>{}</code>".format(os.path.basename(local_file_name))",
                             start_time,
                         ),
                     )
@@ -573,7 +573,7 @@ async def upload_single_file(
             time.sleep(g.x)
         except Exception as e:
             LOGGER.info(e)
-            await message_for_progress_display.edit_text("**FAILED**\n" + str(e))
+            await message_for_progress_display.edit_text(" \n" + str(e))
         else:
             if message.message_id != message_for_progress_display.message_id:
                 try:
