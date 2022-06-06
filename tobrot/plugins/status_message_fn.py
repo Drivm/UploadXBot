@@ -56,7 +56,6 @@ async def status_message_f(
     client, message
 ):  # weird code but 'This is the way' @gautamajay52
     aria_i_p = await aria_start()
-    # Show All Downloads
     to_edit = await message.reply("Checking current status...")
     chat_id = int(message.chat.id)
     mess_id = int(to_edit.message_id)
@@ -117,8 +116,8 @@ async def status_message_f(
 
         umen = f'<a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>'
         if msg == "":
-            msg = f"\nNo Active, Queued or Paused \n Torrents / Direct Links \n"
-            msg = mssg + "\n" + msg + "\n" + ms_g
+            msg = f"\n No Active, Queued or Paused \n Torrents / Direct Links \n"
+            msg = msgg + "\n" + msg + "\n" + ms_g
             await to_edit.edit(msg)
             break
         msg = mssg + "\n" + msg + "\n" + ms_g
