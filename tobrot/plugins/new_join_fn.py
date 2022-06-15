@@ -10,12 +10,12 @@ async def new_join_f(client, message):
     chat_type = message.chat.type
     if chat_type != "private":
         await message.reply_text(
-            f"""<b> Hey there!\n\n This is a private uploader bot. This chat is not supposed to use me</b>\n\n<b>Current CHAT ID: <code>{message.chat.id}</code>""",
+            f"""Hey! This is a private bot. Contact @Auth_r to get access.\n\n<b>Current CHAT ID: <code>{message.chat.id}</code>""",
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('Channel', url='https://t.me/RedDeathXBot')
+                        InlineKeyboardButton('Channel', url='https://t.me/ivbotx')
                     ]
                 ]
                )
